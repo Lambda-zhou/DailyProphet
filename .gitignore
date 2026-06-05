@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+
+# OS
+.DS_Store
+
+# env files
+.env*
+!.env.example
+
+# trending pipeline output (each fork generates its own)
+/daily_reports/
+/logs/
+/tmp-bpc-test/
+
+# Claude Code local state (skills + commands ARE committed; cache/state aren't)
+/.claude/state/
+/.claude/cache/
+
+# typescript
+*.tsbuildinfo
+
+# screenshot originals (only the cropped versions are committed)
+/docs/screenshots/originals/
+
+# embedded bpc-fetch generated cache
+/tools/bpc-fetch/data/sites_cache.json

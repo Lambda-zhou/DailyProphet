@@ -1,0 +1,33 @@
+{
+  "name": "daily-brief",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dry-run": "tsx scripts/dry-run.ts",
+    "dry-run:auto": "node scripts/network-auto.mjs npm run dry-run",
+    "daily": "tsx scripts/daily.ts",
+    "daily:auto": "node scripts/network-auto.mjs npm run daily",
+    "render": "tsx scripts/render.ts",
+    "regen-trading": "tsx scripts/regen-trading.ts",
+    "regen-enrich": "tsx scripts/regen-enrich.ts",
+    "quota-report": "tsx scripts/quota-report.ts",
+    "sources": "tsx scripts/sources.ts",
+    "sources:check": "tsx scripts/sources.ts check",
+    "deploy": "node scripts/deploy.mjs",
+    "build-site": "node scripts/build-site.mjs",
+    "open": "node scripts/open-report.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.96.0",
+    "cheerio": "^1.2.0",
+    "jsonrepair": "^3.14.0",
+    "openai": "^6.38.0",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}

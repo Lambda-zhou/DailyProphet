@@ -1,0 +1,290 @@
+name: Daily Brief
+
+# Generate a fresh daily report and publish to GitHub Pages.
+#
+# One-time setup for forkers (see README → "Run on GitHub Actions"):
+#   1. Settings → Actions → General → enable workflows (forked repos start disabled)
+#   2. Settings → Pages → Build & deployment → Source: "Deploy from a branch" → gh-pages / root
+#   3. Settings → Secrets and variables → Actions:
+#        - Secrets: ANTHROPIC_API_KEY (or OPENAI / DEEPSEEK / MINIMAX as you prefer)
+#                   FEISHU_WEBHOOK (optional; send report URL to a Feishu bot after publish)
+#        - Variables (all optional, sensible defaults provided):
+#            LLM_BACKEND     anthropic | openai | deepseek | minimax    (default: anthropic)
+#            LLM_MODEL       e.g. claude-sonnet-4-6 / gpt-4o-mini       (backend default if unset)
+#            REPORT_LOCALE   zh | en                                    (default: zh)
+#            REPORT_TZ       IANA tz, e.g. Asia/Shanghai / UTC          (default: UTC in CI)
+#            REPORT_HOUR     trigger hour(s) in REPORT_TZ, comma-list   (default: 8 — 08:00)
+#                            examples: "8" / "8,18" / "0,6,12,18"
+#            REPORT_DAYS     day-of-week filter (cron-style 0-6 SUN=0)  (default: * — every day)
+#                            examples: "*" / "1-5" (weekdays) / "1,3,5" (MWF)
+#   4. Trigger once manually from Actions tab to seed gh-pages.
+#
+# After first successful run your report is live at:
+#   https://<your-username>.github.io/<repo-name>/
+#
+# Schedule mechanics: cron fires hourly because GitHub Actions cron is UTC-only
+# and we want the user's local-timezone hour. A short "gate" job checks the
+# current hour in REPORT_TZ against REPORT_HOUR and only allows the build job
+# to run when they match. workflow_dispatch always bypasses the gate.
+
+on:
+  schedule:
+    # Two hourly triggers (at :07 and :37) — GitHub Actions silently drops
+    # a non-trivial fraction of scheduled runs, sometimes whole stretches
+    # of 2-3 hours back-to-back. A single off-peak cron was not enough; we
+    # saw the BJ 08-10 stretch get fully swallowed multiple times. Two
+    # triggers per hour gives ~95% per-window coverage, and the gate's
+    # catchup branch handles the residual misses by allowing a build any
+    # time after `earliest REPORT_HOUR - 1` if today's report is still
+    # absent from gh-pages.
+    - cron: '7 * * * *'
+    - cron: '37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # needed to push to gh-pages branch
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    name: Time gate
+    runs-on: ubuntu-latest
+    outputs:
+      should-run: ${{ steps.check.outputs.should-run }}
+    steps:
+      - name: Check schedule
+        id: check
+        env:
+          REPORT_TZ: ${{ vars.REPORT_TZ }}
+          REPORT_HOUR: ${{ vars.REPORT_HOUR }}
+          REPORT_DAYS: ${{ vars.REPORT_DAYS }}
+          EVENT_NAME: ${{ github.event_name }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Manual triggers always run — user clicked Run workflow.
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "Manual trigger — bypassing time gate"
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          TZ_VAL="${REPORT_TZ:-UTC}"
+          HOURS_VAL="${REPORT_HOUR:-8}"
+          DAYS_VAL="${REPORT_DAYS:-*}"
+
+          NOW_HOUR=$(TZ="$TZ_VAL" date +%-H)
+          NOW_DOW=$(TZ="$TZ_VAL" date +%w)
+          NOW_PRINT=$(TZ="$TZ_VAL" date '+%Y-%m-%d %H:%M %Z')
+
+          echo "Now in $TZ_VAL: $NOW_PRINT (hour=$NOW_HOUR, dow=$NOW_DOW)"
+          echo "Configured REPORT_HOUR='$HOURS_VAL', REPORT_DAYS='$DAYS_VAL'"
+
+          # Hour match: comma-separated list of integers (0-23).
+          hour_match=false
+          IFS=',' read -ra HLIST <<< "$HOURS_VAL"
+          for h in "${HLIST[@]}"; do
+            h_trim="${h// /}"
+            if [ "$NOW_HOUR" = "$h_trim" ]; then
+              hour_match=true
+              break
+            fi
+          done
+
+          # Day-of-week match: '*', single digits, ranges "a-b", or comma combos.
+          day_match=false
+          if [ "$DAYS_VAL" = "*" ]; then
+            day_match=true
+          else
+            IFS=',' read -ra DLIST <<< "$DAYS_VAL"
+            for d in "${DLIST[@]}"; do
+              d_trim="${d// /}"
+              if [[ "$d_trim" == *-* ]]; then
+                start="${d_trim%-*}"
+                end="${d_trim#*-}"
+                if [ "$NOW_DOW" -ge "$start" ] && [ "$NOW_DOW" -le "$end" ]; then
+                  day_match=true
+                  break
+                fi
+              else
+                if [ "$NOW_DOW" = "$d_trim" ]; then
+                  day_match=true
+                  break
+                fi
+              fi
+            done
+          fi
+
+          # Catchup branch — covers GitHub Actions silently dropping scheduled
+          # triggers (which happens to ~30% of cron runs, especially at the
+          # exact target hour). Fires when:
+          #   1. day matches AND
+          #   2. exact hour didn't match AND
+          #   3. we're past today's earliest REPORT_HOUR AND
+          #   4. today's report doesn't yet exist on gh-pages
+          # Once today's report is published, this branch self-suppresses on
+          # subsequent gate runs — no double-builds per day.
+          catchup_match=false
+          if [ "$day_match" = "true" ] && [ "$hour_match" = "false" ]; then
+            earliest_hour=99
+            for h in "${HLIST[@]}"; do
+              h_trim="${h// /}"
+              if [ "$h_trim" -lt "$earliest_hour" ]; then
+                earliest_hour=$h_trim
+              fi
+            done
+            # Tolerate 1h early: if BJ 07:XX is the only trigger before BJ
+            # 08:00 gets swallowed, we'd rather fire slightly early than
+            # not at all. earliest_hour=0 edge case: don't go negative.
+            catchup_threshold=$earliest_hour
+            if [ "$earliest_hour" -gt 0 ]; then
+              catchup_threshold=$((earliest_hour - 1))
+            fi
+            if [ "$NOW_HOUR" -ge "$catchup_threshold" ]; then
+              TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
+              CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                -H "Authorization: Bearer ${GH_TOKEN}" \
+                -H "Accept: application/vnd.github+json" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "$CHECK_URL" || echo "000")
+              if [ "$HTTP_CODE" = "404" ]; then
+                echo "↻ Catchup: today's report ($TODAY) missing from gh-pages — recovering"
+                catchup_match=true
+              else
+                echo "Catchup check: today's report exists (HTTP $HTTP_CODE) — no action"
+              fi
+            fi
+          fi
+
+          if [ "$hour_match" = "true" ] && [ "$day_match" = "true" ]; then
+            echo "✓ Match — proceeding to build"
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$catchup_match" = "true" ]; then
+            echo "✓ Catchup — proceeding to build"
+            echo "should-run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "✗ No match — skipping (hour=$hour_match day=$day_match catchup=$catchup_match)"
+            echo "should-run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    name: Build & publish
+    needs: gate
+    if: needs.gate.outputs.should-run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+          cache-dependency-path: tools/bpc-fetch/pyproject.toml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install embedded bpc-fetch
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ./tools/bpc-fetch
+          python -m playwright install chromium
+
+      # Bring previous reports into the workspace so they survive each run
+      # and so build-site can list them all in the archive.
+      - name: Restore existing reports from gh-pages
+        run: |
+          mkdir -p daily_reports
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages --depth=1
+            git --work-tree=daily_reports checkout origin/gh-pages -- . || true
+            # Drop the index/archive — build-site regenerates them
+            rm -f daily_reports/index.html daily_reports/archive.html
+            echo "Restored $(ls -1d daily_reports/20*/ 2>/dev/null | wc -l) prior report dirs"
+          else
+            echo "gh-pages doesn't exist yet — first run"
+          fi
+
+      - name: Generate today's report
+        env:
+          LLM_BACKEND: ${{ vars.LLM_BACKEND || 'anthropic' }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          # Optional proxy / self-hosted endpoints — forward whatever the
+          # forker set in Settings → Variables. Empty values are a no-op
+          # (backends fall back to the official URL in code).
+          ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL }}
+          MINIMAX_BASE_URL: ${{ vars.MINIMAX_BASE_URL }}
+          # Generic aliases — handy when pointing at an OpenAI/Anthropic
+          # compatible service that isn't one of the named presets (Moonshot,
+          # SiliconFlow, OpenRouter, self-hosted, ...). Provider-specific
+          # vars above take precedence when both are set.
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
+          REPORT_TZ: ${{ vars.REPORT_TZ }}
+          WEB_MODE: 'true'
+        run: npm run daily
+
+      - name: Build static site (index + archive)
+        run: npm run build-site
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./daily_reports
+          publish_branch: gh-pages
+          keep_files: false  # we restored everything above, so a clean publish is fine
+          commit_message: 'daily: report for ${{ github.run_id }}'
+
+      - name: Notify Feishu
+        if: success()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${FEISHU_WEBHOOK:-}" ]; then
+            echo "FEISHU_WEBHOOK not set — skipping notification"
+            exit 0
+          fi
+
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          if [ "$REPO_NAME" = "${OWNER}.github.io" ]; then
+            PAGE_URL="https://${OWNER}.github.io/"
+          else
+            PAGE_URL="https://${OWNER}.github.io/${REPO_NAME}/"
+          fi
+
+          TODAY="$(date -u +%Y-%m-%d)"
+          if [ "${REPORT_LOCALE}" = "en" ]; then
+            TEXT="Daily Brief published successfully.\nRepo: ${GITHUB_REPOSITORY}\nDate: ${TODAY}\nPage: ${PAGE_URL}\nRun: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          else
+            TEXT="日报发布成功。\n仓库：${GITHUB_REPOSITORY}\n日期：${TODAY}\n页面：${PAGE_URL}\n运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          fi
+
+          curl -sS -X POST "${FEISHU_WEBHOOK}" \
+            -H "Content-Type: application/json" \
+            -d "$(printf '{"msg_type":"text","content":{"text":"%s"}}' "$(printf '%s' "$TEXT" | python -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')")"
