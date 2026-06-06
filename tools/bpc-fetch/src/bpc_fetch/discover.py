@@ -58,6 +58,7 @@ async def discover(domain: str, since: str = "7d", limit: int = 20) -> dict:
             articles = browser_articles
             source = "browser"
 
+    articles = _filter_and_dedupe_articles(articles)
     articles = articles[:limit]
     return {
         "ok": True,
@@ -100,7 +101,7 @@ def _parse_rss(xml_text: str, since: datetime, domain: str) -> list[dict]:
         date = _parse_date(pub_date)
         if date and date < since:
             continue
-        if link and title:
+        if link and title and _is_article_url(link):
             articles.append({
                 "title": title,
                 "url": link,
@@ -122,7 +123,7 @@ def _parse_rss(xml_text: str, since: datetime, domain: str) -> list[dict]:
         date = _parse_date(updated)
         if date and date < since:
             continue
-        if link and title:
+        if link and title and _is_article_url(link):
             articles.append({
                 "title": title,
                 "url": link,
@@ -214,6 +215,21 @@ async def _try_homepage(client: httpx.AsyncClient, domain: str, since: datetime)
             seen.add(url)
             articles.append({"title": title, "url": url, "date": "", "domain": domain})
     return articles
+
+
+def _filter_and_dedupe_articles(articles: list[dict]) -> list[dict]:
+    """Apply final URL screening + de-duplication across all discovery modes."""
+    out: list[dict] = []
+    seen: set[str] = set()
+    for article in articles:
+        url = str(article.get("url", "")).strip()
+        if not url or not _is_article_url(url):
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append(article)
+    return out
 
 
 def _is_article_url(url: str) -> bool:

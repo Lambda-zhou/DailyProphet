@@ -64,6 +64,41 @@ async function enrichFinanceNews(articles: ArticleInput[]): Promise<void> {
   await enrichMergedSubgroup(articles, "finance", "news");
 }
 
+/**
+ * bpc/paywall-aware sources deserve their own summary pass because they may be
+ * rendered again in the dedicated "Foreign Media" tab even when they don't
+ * survive the finance:news merged top-N cut. Reuse the finance-news factual
+ * summarizer so the page shows localized summaries for every visible bpc item.
+ */
+async function enrichBpcArticles(articles: ArticleInput[]): Promise<void> {
+  const bpcSources = sources.filter((s) => s.type === "bpc" && s.enabled !== false);
+  if (bpcSources.length === 0) return;
+
+  const bpcIds = new Set(bpcSources.map((s) => s.id));
+  const sameLocaleIds = new Set(
+    bpcSources.filter((s) => (s.lang ?? "en") === REPORT_LOCALE).map((s) => s.id),
+  );
+
+  const targets = articles
+    .filter((a) => bpcIds.has(a.sourceId))
+    .filter((a) => !sameLocaleIds.has(a.sourceId))
+    .filter((a) => !a.summary);
+
+  if (targets.length === 0) return;
+  console.log(
+    `[daily] enriching ${targets.length} bpc items with ${REPORT_LOCALE} summaries…`,
+  );
+  const t0 = Date.now();
+  const summaries = await enrichFinanceNewsSummaries(targets);
+  for (const a of targets) {
+    const s = summaries.get(a.url);
+    if (s) a.summary = s;
+  }
+  console.log(
+    `[daily] bpc enrichment done in ${((Date.now() - t0) / 1000).toFixed(1)}s, matched ${summaries.size}/${targets.length}`,
+  );
+}
+
 async function enrichPolitics(articles: ArticleInput[]): Promise<void> {
   await enrichMergedSubgroup(articles, "politics", "world");
 }
@@ -243,23 +278,31 @@ async function main() {
   await enrichGhTrending(articles);
   await enrichTrendingPapers(articles);
   await enrichFinanceNews(articles);
+  await enrichBpcArticles(articles);
   await enrichPolitics(articles);
   await enrichAiNews(articles);
   await enrichXViral(articles);
 
-  // Trading signals: Yahoo fetch + indicators + commentary. Non-fatal —
-  // if it errors, we still ship the news digest.
-  let trading: TradingSection | null = null;
-  try {
-    trading = await runTrading();
-  } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e);
-    console.warn(`[daily] trading section failed: ${msg}`);
-  }
+  // Trading signals and the final digest are independent once article
+  // enrichment is done, so run them in parallel. This removes ~1 full
+  // LLM call worth of wall-clock time from GitHub Actions without changing
+  // content quality or fetch behavior.
+  const tradingPromise: Promise<TradingSection | null> = (async () => {
+    try {
+      return await runTrading();
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.warn(`[daily] trading section failed: ${msg}`);
+      return null;
+    }
+  })();
 
   console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
-  const { report } = await generateDailyReport(articles);
+  const [{ report }, trading] = await Promise.all([
+    generateDailyReport(articles),
+    tradingPromise,
+  ]);
   if (trading) report.trading = trading;
   console.log(`[daily] digest ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
 

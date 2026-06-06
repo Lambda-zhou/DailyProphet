@@ -114,6 +114,7 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
           "**Output language: ENGLISH ONLY.** Every string value in the JSON — hero_headline, daily_overview, every brief's title/summary, editor_note, keywords — must be written entirely in English. No Chinese characters anywhere.",
           "",
           "Your task: generate today's daily brief from the candidate news below. **The response MUST be a single valid JSON object** — starts with `{`, ends with `}`, no markdown, no code fences, no explanations.",
+          "Each candidate may include both `excerpt` and `summary`. When `summary` is present, prefer it because it is the already-condensed/localized version prepared for publication; use `excerpt` as fallback context only.",
           "",
           "The JSON must contain every field non-empty (briefs arrays per the system-prompt counts):",
           "  - hero_headline: 10-25 word headline of the day",
@@ -133,6 +134,7 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
         ].join("\n")
       : [
           "你的任务：根据下方候选新闻，生成一份当日简报，**响应必须是一个合法 JSON 对象**——以 `{` 开头，以 `}` 结尾，不要 markdown / 不要代码围栏 / 不要任何解释。",
+          "候选新闻里可能同时提供 `excerpt` 和 `summary`。如果 `summary` 存在，优先使用它，因为它已经是为发布准备好的压缩/本地化摘要；`excerpt` 只作为补充上下文。",
           "",
           "JSON 必须包含全部字段且不能为空（briefs 数组按 system prompt 规定的条数填充）：",
           "  - hero_headline: 10-25 字的当日一句话头条",
@@ -214,6 +216,7 @@ export async function generateDailyReport(
     source: a.source,
     category: a.category,
     excerpt: (a.excerpt ?? "").slice(0, 200),
+    summary: (a.summary ?? "").slice(0, 200),
     published: a.publishedAt?.toISOString() ?? "",
   }));
   const userPayloadJson = JSON.stringify(userPayload);
