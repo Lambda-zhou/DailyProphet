@@ -164,6 +164,7 @@ const CATEGORY_DIGEST_LABELS: Record<Category, string> = {
 };
 
 const BPC_PANEL_ID = "foreign-media";
+const BPC_PANEL_SOURCE_LIMIT = 12;
 
 /**
  * L2 ordering per category. Categories not listed render flat (no L2 tabs).
@@ -415,22 +416,26 @@ export function groupRaw(
   return out;
 }
 
-function buildBpcSubgroups(raw: RawByCategory, registry: SourceDef[]): SubGroup[] {
+function flattenRaw(raw: RawByCategory): ArticleInput[] {
+  return Object.values(raw).flatMap((subs) =>
+    subs.flatMap((sub) => sub.sources.flatMap((source) => source.items)),
+  );
+}
+
+function buildBpcSubgroups(articles: ArticleInput[], registry: SourceDef[]): SubGroup[] {
   const bpcSources = registry.filter((s) => s.enabled !== false && s.type === "bpc");
   if (bpcSources.length === 0) return [];
 
   const buckets = new Map<string, ArticleInput[]>();
   for (const source of bpcSources) buckets.set(source.id, []);
 
-  for (const subs of Object.values(raw)) {
-    for (const sub of subs) {
-      for (const source of sub.sources) {
-        for (const item of source.items) {
-          const bucket = buckets.get(item.sourceId);
-          if (bucket) bucket.push(item);
-        }
-      }
-    }
+  // Use the full fetched article set rather than the already-rendered `raw`
+  // groups. raw.finance/news is intentionally capped to the top merged items,
+  // but the dedicated Foreign Media tab should show the newest bpc items per
+  // bpc source, even when they did not survive that finance merged top-N cut.
+  for (const item of articles) {
+    const bucket = buckets.get(item.sourceId);
+    if (bucket) bucket.push(item);
   }
 
   const sourceGroups: SourceGroup[] = bpcSources
@@ -441,7 +446,7 @@ function buildBpcSubgroups(raw: RawByCategory, registry: SourceDef[]): SubGroup[
       }
       const items = [...deduped.values()].sort(
         (a, b) => (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
-      );
+      ).slice(0, BPC_PANEL_SOURCE_LIMIT);
       return {
         sourceId: source.id,
         sourceName: source.name,
@@ -581,6 +586,7 @@ export function renderHtml(
   report: DailyReport,
   raw: RawByCategory,
   date: string,
+  articles?: ArticleInput[],
 ): string {
   const trading = report.trading;
 
@@ -590,7 +596,7 @@ export function renderHtml(
   // forums as their own top-level tab per UX preference.
   const techMainSubs = raw.tech.filter((s) => TECH_MAIN_SUBS.has(s.id));
   const techCommunitySubs = raw.tech.filter((s) => TECH_COMMUNITY_SUBS.has(s.id));
-  const bpcSubs = buildBpcSubgroups(raw, REGISTRY_SOURCES);
+  const bpcSubs = buildBpcSubgroups(articles ?? flattenRaw(raw), REGISTRY_SOURCES);
 
   const sumItems = (subs: SubGroup[]) =>
     subs.reduce(

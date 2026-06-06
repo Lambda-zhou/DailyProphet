@@ -61,7 +61,7 @@ async function main() {
   const dateDir = path.join(OUTPUT_DIR, date);
   fs.mkdirSync(dateDir, { recursive: true });
   const base = path.join(dateDir, date);
-  fs.writeFileSync(`${base}.html`, renderHtml(report, raw, date), "utf8");
+  fs.writeFileSync(`${base}.html`, renderHtml(report, raw, date, articles), "utf8");
   if (process.env.OUTPUT_MARKDOWN === "true") {
     fs.writeFileSync(`${base}.md`, renderMarkdown(report, date), "utf8");
     console.log(`[render] wrote ${base}.{html,md}`);

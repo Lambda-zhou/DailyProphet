@@ -8,8 +8,9 @@ import { fetchAllArticles } from "../lib/sources/fetch-all";
 import {
   generateDailyReport,
   type ArticleInput,
+  type DailyReport,
 } from "../lib/ai/pipeline";
-import { getModelTag, validateBackendCredentials } from "../lib/ai/llm";
+import { getBackend, getModelTag, validateBackendCredentials } from "../lib/ai/llm";
 import {
   enrichFinanceNewsSummaries,
   enrichGithubTrendingSummaries,
@@ -31,6 +32,31 @@ import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
 
 const OUTPUT_DIR = "daily_reports";
+const BPC_ENRICH_LIMIT_PER_SOURCE = 12;
+function envPositiveInt(name: string, fallback: number): number {
+  const raw = process.env[name]?.trim();
+  if (!raw) return fallback;
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+async function runWithConcurrency(
+  tasks: Array<{ name: string; run: () => Promise<void> }>,
+  concurrency: number,
+): Promise<void> {
+  if (tasks.length === 0) return;
+  let next = 0;
+  const workers = Array.from(
+    { length: Math.min(concurrency, tasks.length) },
+    async () => {
+      while (next < tasks.length) {
+        const task = tasks[next++];
+        await task.run();
+      }
+    },
+  );
+  await Promise.all(workers);
+}
 
 async function fetchAll(): Promise<ArticleInput[]> {
   return fetchAllArticles(sources);
@@ -79,10 +105,22 @@ async function enrichBpcArticles(articles: ArticleInput[]): Promise<void> {
     bpcSources.filter((s) => (s.lang ?? "en") === REPORT_LOCALE).map((s) => s.id),
   );
 
-  const targets = articles
+  const bpcCandidates = articles
     .filter((a) => bpcIds.has(a.sourceId))
     .filter((a) => !sameLocaleIds.has(a.sourceId))
-    .filter((a) => !a.summary);
+    .filter((a) => !a.summary)
+    .sort(
+      (a, b) =>
+        (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
+    );
+  const perSourceCount = new Map<string, number>();
+  const targets: ArticleInput[] = [];
+  for (const article of bpcCandidates) {
+    const count = perSourceCount.get(article.sourceId) ?? 0;
+    if (count >= BPC_ENRICH_LIMIT_PER_SOURCE) continue;
+    perSourceCount.set(article.sourceId, count + 1);
+    targets.push(article);
+  }
 
   if (targets.length === 0) return;
   console.log(
@@ -193,6 +231,17 @@ async function enrichMergedSubgroup(
   const sameLocaleIds = new Set(
     subSources.filter((s) => (s.lang ?? "en") === REPORT_LOCALE).map((s) => s.id),
   );
+  // The dedicated Foreign Media tab has its own bpc summary pass. Skipping
+  // bpc sources here avoids summarizing the same FT items twice when
+  // enrichment tasks run concurrently.
+  const bpcIds =
+    category === "finance" && subcategory === "news"
+      ? new Set(
+          subSources
+            .filter((s) => s.type === "bpc")
+            .map((s) => s.id),
+        )
+      : new Set<string>();
   const limit = MERGED_SUBGROUP_LIMITS[`${category}:${subcategory}`] ?? 12;
   // Top-N respects all enabled sources (so we don't reshape the merged
   // timeline). Enrichment only targets items NOT already in the target
@@ -205,7 +254,9 @@ async function enrichMergedSubgroup(
         (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
     )
     .slice(0, limit);
-  const toEnrich = top.filter((a) => !sameLocaleIds.has(a.sourceId));
+  const toEnrich = top.filter(
+    (a) => !sameLocaleIds.has(a.sourceId) && !bpcIds.has(a.sourceId),
+  );
   if (toEnrich.length === 0) return;
   console.log(
     `[daily] enriching ${toEnrich.length}/${top.length} ${category}:${subcategory} items with ${REPORT_LOCALE} summaries…`,
@@ -267,6 +318,11 @@ async function main() {
   validateBackendCredentials();
 
   const date = todayKey();
+  const skipDigestEnv = process.env.SKIP_DIGEST?.trim().toLowerCase();
+  const skipDigest =
+    skipDigestEnv !== undefined
+      ? ["1", "true", "yes"].includes(skipDigestEnv)
+      : process.env.WEB_MODE === "true" && process.env.OUTPUT_MARKDOWN !== "true";
   console.log(`[daily] ${date} — fetching sources…\n`);
   const articles = await fetchAll();
   console.log(`\n[daily] total articles: ${articles.length}`);
@@ -274,19 +330,9 @@ async function main() {
     throw new Error("no articles fetched — aborting");
   }
 
-  // Enrich GH Trending, papers, finance news, and politics with summaries.
-  await enrichGhTrending(articles);
-  await enrichTrendingPapers(articles);
-  await enrichFinanceNews(articles);
-  await enrichBpcArticles(articles);
-  await enrichPolitics(articles);
-  await enrichAiNews(articles);
-  await enrichXViral(articles);
-
-  // Trading signals and the final digest are independent once article
-  // enrichment is done, so run them in parallel. This removes ~1 full
-  // LLM call worth of wall-clock time from GitHub Actions without changing
-  // content quality or fetch behavior.
+  // Trading signals are independent from article enrichment. Start them early
+  // so the market LLM call overlaps with summary enrichment instead of adding
+  // ~1 minute after the article pipeline.
   const tradingPromise: Promise<TradingSection | null> = (async () => {
     try {
       return await runTrading();
@@ -297,14 +343,57 @@ async function main() {
     }
   })();
 
-  console.log(`[daily] generating digest with ${getModelTag()}…`);
+  // Enrich visible raw-panel items with localized summaries. API backends can
+  // handle a small amount of parallelism; the CLI backend stays serial by
+  // default to avoid multiple local Claude Code processes competing.
+  const enrichConcurrency = envPositiveInt(
+    "DAILY_ENRICH_CONCURRENCY",
+    getBackend() === "claude-cli" ? 1 : 3,
+  );
+  console.log(`[daily] running enrichment tasks with concurrency=${enrichConcurrency}`);
+  await runWithConcurrency(
+    [
+      { name: "github-trending", run: () => enrichGhTrending(articles) },
+      { name: "trending-papers", run: () => enrichTrendingPapers(articles) },
+      { name: "finance-news", run: () => enrichFinanceNews(articles) },
+      { name: "bpc", run: () => enrichBpcArticles(articles) },
+      { name: "politics", run: () => enrichPolitics(articles) },
+      { name: "ai-news", run: () => enrichAiNews(articles) },
+      { name: "x-viral", run: () => enrichXViral(articles) },
+    ],
+    enrichConcurrency,
+  );
+
+  const report: DailyReport = {
+    hero_headline: "",
+    daily_overview: "",
+    tech_briefs: [],
+    finance_briefs: [],
+    politics_briefs: [],
+    editor_note: "",
+    keywords: [],
+  };
+
   const t0 = Date.now();
-  const [{ report }, trading] = await Promise.all([
-    generateDailyReport(articles),
-    tradingPromise,
-  ]);
+  let trading: TradingSection | null;
+  if (skipDigest) {
+    console.log(
+      `[daily] skipping final digest (web HTML renders raw tabs; set OUTPUT_MARKDOWN=true or SKIP_DIGEST=false to enable markdown digest)…`,
+    );
+    trading = await tradingPromise;
+  } else {
+    console.log(`[daily] generating digest with ${getModelTag()}…`);
+    const [digestResult, tradingResult] = await Promise.all([
+      generateDailyReport(articles),
+      tradingPromise,
+    ]);
+    Object.assign(report, digestResult.report);
+    trading = tradingResult;
+  }
   if (trading) report.trading = trading;
-  console.log(`[daily] digest ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
+  console.log(
+    `[daily] ${skipDigest ? "post-enrichment AI sections" : "digest"} ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`,
+  );
 
   const dateDir = path.join(OUTPUT_DIR, date);
   fs.mkdirSync(dateDir, { recursive: true });
@@ -319,7 +408,7 @@ async function main() {
     JSON.stringify({ date, articles }, null, 2),
     "utf8",
   );
-  fs.writeFileSync(`${base}.html`, renderHtml(report, raw, date), "utf8");
+  fs.writeFileSync(`${base}.html`, renderHtml(report, raw, date, articles), "utf8");
   if (process.env.OUTPUT_MARKDOWN === "true") {
     fs.writeFileSync(`${base}.md`, renderMarkdown(report, date), "utf8");
     console.log(`[daily] wrote ${base}.{json,html,md,articles.json}`);

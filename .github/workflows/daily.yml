@@ -137,6 +137,7 @@ jobs:
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
           WEB_MODE: "true"
+          DAILY_ENRICH_CONCURRENCY: ${{ vars.DAILY_ENRICH_CONCURRENCY || '3' }}
         run: npm run daily
 
       - name: Build static site
@@ -174,11 +175,10 @@ jobs:
 
           TODAY="$(date -u +%Y-%m-%d)"
           if [ "${REPORT_LOCALE:-zh}" = "en" ]; then
-            TEXT="Daily Brief published successfully.\nRepo: ${GITHUB_REPOSITORY}\nDate: ${TODAY}\nPage: ${PAGE_URL}\nRun: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            TEXT="$(printf 'Daily Brief published successfully.\nRepo: %s\nDate: %s\nPage: %s' "${GITHUB_REPOSITORY}" "${TODAY}" "${PAGE_URL}")"
           else
-            TEXT="日报发布成功。\n仓库：${GITHUB_REPOSITORY}\n日期：${TODAY}\n页面：${PAGE_URL}\n运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            TEXT="$(printf '日报发布成功。\n仓库：%s\n日期：%s\n页面：%s' "${GITHUB_REPOSITORY}" "${TODAY}" "${PAGE_URL}")"
           fi
 
-          ESCAPED_TEXT=$(printf '%s' "$TEXT" | python -c "import json,sys; print(json.dumps(sys.stdin.read())[1:-1])")
-          PAYLOAD=$(printf '{"msg_type":"text","content":{"text":"%s"}}' "$ESCAPED_TEXT")
+          PAYLOAD=$(printf '%s' "$TEXT" | python -c "import json,sys; print(json.dumps({'msg_type':'text','content':{'text':sys.stdin.read()}}, ensure_ascii=False))")
           curl -sS -X POST "${FEISHU_WEBHOOK}" -H "Content-Type: application/json" -d "$PAYLOAD"

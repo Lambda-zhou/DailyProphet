@@ -13,6 +13,7 @@
     "quota-report": "tsx scripts/quota-report.ts",
     "sources": "tsx scripts/sources.ts",
     "sources:check": "tsx scripts/sources.ts check",
+    "typecheck": "tsc --noEmit",
     "deploy": "node scripts/deploy.mjs",
     "build-site": "node scripts/build-site.mjs",
     "open": "node scripts/open-report.mjs"

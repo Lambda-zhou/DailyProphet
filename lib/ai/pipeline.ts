@@ -215,8 +215,12 @@ export async function generateDailyReport(
     url: a.url,
     source: a.source,
     category: a.category,
-    excerpt: (a.excerpt ?? "").slice(0, 200),
-    summary: (a.summary ?? "").slice(0, 200),
+    // Keep the final digest prompt compact. If an item already has a localized
+    // summary from the enrichment pass, do not also include the raw excerpt —
+    // sending both roughly doubles prompt size and has caused very slow final
+    // digest calls on GitHub Actions. Excerpt is only fallback context.
+    summary: a.summary ? a.summary.slice(0, 180) : undefined,
+    excerpt: a.summary ? undefined : (a.excerpt ?? "").slice(0, 160),
     published: a.publishedAt?.toISOString() ?? "",
   }));
   const userPayloadJson = JSON.stringify(userPayload);
