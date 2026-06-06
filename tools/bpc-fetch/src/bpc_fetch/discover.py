@@ -218,7 +218,19 @@ async def _try_homepage(client: httpx.AsyncClient, domain: str, since: datetime)
 
 def _is_article_url(url: str) -> bool:
     """Heuristic: URL looks like an article (has date pattern or article path)."""
-    path = urlparse(url).path
+    parsed = urlparse(url)
+    host = parsed.hostname or ""
+    path = parsed.path
+
+    # FT's homepage exposes many section/navigation URLs such as
+    # /technology-sector, /business-education, /world/us/politics.  The
+    # generic heuristic below used to treat those as articles, which polluted
+    # GitHub Actions reports when RSS discovery was unavailable and we fell
+    # back to homepage scraping.  Real Financial Times article pages use the
+    # stable /content/<uuid> shape, so keep FT strict.
+    if host == "ft.com" or host.endswith(".ft.com"):
+        return bool(re.fullmatch(r"/content/[0-9a-fA-F-]{36}/?", path))
+
     if re.search(r"/\d{4}/\d{2}/", path):
         return True
     if any(seg in path for seg in ["/article", "/story", "/news/", "/opinion/", "/world/", "/politics/", "/tech"]):
@@ -294,6 +306,8 @@ async def _try_browser_homepage(domain: str, since: datetime) -> list[dict]:
             for item in links:
                 url = item.get("url", "")
                 title = item.get("title", "")
+                if not _is_article_url(url):
+                    continue
                 date_match = re.search(r"/(\d{4})/(\d{2})/(\d{2})/", url)
                 date_str = ""
                 if date_match:
