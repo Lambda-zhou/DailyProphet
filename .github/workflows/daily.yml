@@ -3,8 +3,8 @@ name: Daily Brief
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7 * * * *"
-    - cron: "37 * * * *"
+    # GitHub cron uses UTC. This maps to 08:00 / 12:00 / 18:00 in Asia/Shanghai.
+    - cron: "0 0,4,10 * * *"
 
 permissions:
   contents: write
@@ -24,7 +24,6 @@ jobs:
         id: check
         env:
           REPORT_TZ: ${{ vars.REPORT_TZ }}
-          REPORT_HOUR: ${{ vars.REPORT_HOUR }}
           REPORT_DAYS: ${{ vars.REPORT_DAYS }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
@@ -35,22 +34,10 @@ jobs:
             exit 0
           fi
 
-          TZ_VAL="${REPORT_TZ:-UTC}"
-          HOURS_VAL="${REPORT_HOUR:-8}"
+          TZ_VAL="${REPORT_TZ:-Asia/Shanghai}"
           DAYS_VAL="${REPORT_DAYS:-*}"
 
-          NOW_HOUR=$(TZ="$TZ_VAL" date +%-H)
           NOW_DOW=$(TZ="$TZ_VAL" date +%w)
-
-          hour_match=false
-          IFS=',' read -ra HLIST <<< "$HOURS_VAL"
-          for h in "${HLIST[@]}"; do
-            h_trim="${h// /}"
-            if [ "$NOW_HOUR" = "$h_trim" ]; then
-              hour_match=true
-              break
-            fi
-          done
 
           day_match=false
           if [ "$DAYS_VAL" = "*" ]; then
@@ -73,7 +60,7 @@ jobs:
             done
           fi
 
-          if [ "$hour_match" = "true" ] && [ "$day_match" = "true" ]; then
+          if [ "$day_match" = "true" ]; then
             echo "should_run=true" >> "$GITHUB_OUTPUT"
           else
             echo "should_run=false" >> "$GITHUB_OUTPUT"
