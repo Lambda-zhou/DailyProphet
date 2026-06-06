@@ -1,115 +1,34 @@
 {
-  "hero_headline": "美伊在海湾地区交换军事打击停火协议再受考验",
-  "daily_overview": "技术领域，AI进展活跃：ChatGPT推出记忆系统提升交互体验，NVIDIA发布全开放大模型优化代理任务，而Meta AI客服暴露安全风险；同时，AI代理框架如hermes-agent和企业应用案例显示技术向个性化发展。财经方面，美股因大型科技股担忧大幅下跌，奥地利失去顶级信用评级反映财政压力，特朗普计划会见AI领袖推动投资，AI股票泡沫讨论升温。时政上，美伊在海湾地区交换军事打击，停火协议面临考验；德国东部选举中极右翼支持率上升，显示政治分化；印度热浪迫使工人在健康和工资间抉择，凸显气候挑战。",
-  "tech_briefs": [
-    {
-      "title": "AI代理框架进化与企业软件交付革新",
-      "url": "https://openai.com/index/endava-frontiers",
-      "source": "OpenAI News",
-      "summary": "NousResearch的hermes-agent是一个可自我进化的AI代理框架，通过持续互动学习适应个性化需求；同时，Endava利用AI代理、ChatGPT Enterprise和Codex重新设计软件交付，加速流程和自动化工作流，构建企业级AI原生文化。（多家报道）",
-      "importance": 7
-    },
-    {
-      "title": "ChatGPT推出记忆系统提升用户体验",
-      "url": "https://openai.com/index/chatgpt-memory-dreaming",
-      "source": "OpenAI News",
-      "summary": "ChatGPT引入新记忆系统，更好地记住用户偏好，保持跨对话上下文新鲜和相关，从而提升交互体验和个性化服务水平。",
-      "importance": 8
-    },
-    {
-      "title": "Meta AI客服漏洞导致账户被盗",
-      "url": "https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/",
-      "source": "MIT Tech Review AI",
-      "summary": "攻击者利用Meta的AI客服代理，通过要求将Instagram账户链接到攻击者邮箱实施盗窃，凸显AI安全的重要性超越模型本身。",
-      "importance": 8
-    },
-    {
-      "title": "NVIDIA发布全开放大模型优化代理任务",
-      "url": "https://news.smol.ai/issues/26-06-04-not-much/",
-      "source": "Smol AI News",
-      "summary": "NVIDIA发布Nemotron 3 Ultra，全开放550B MoE模型，55B活跃参数，1M上下文，优化长时代理任务，提速5倍并降低成本30%，采用混合Mamba/attention架构。",
-      "importance": 7
-    }
-  ],
-  "finance_briefs": [
-    {
-      "title": "美股因大型科技股担忧大幅下跌",
-      "url": "https://www.bbc.com/news/articles/cwy2yq0dj58o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "summary": "纳斯达克指数创下2025年初以来最大单日跌幅，投资者对大型科技公司前景感到担忧，引发市场广泛抛售。",
-      "importance": 8
-    },
-    {
-      "title": "奥地利失去顶级信用评级结束历史",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-06/austria-downgrade-ends-era-in-club-of-europe-s-safest-borrowers",
-      "source": "Bloomberg Markets",
-      "summary": "因长期高预算赤字，奥地利失去最后一家主要评估机构的顶级信用评级，结束数十年作为欧洲最佳评级发行人的时代，反映财政挑战。",
-      "importance": 7
-    },
-    {
-      "title": "特朗普计划会见AI领袖讨论投资",
-      "url": "https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "summary": "美国总统表示预计下周与顶级AI公司领导人会面，讨论美国在AI领域的投资，显示政府对AI技术的重视。",
-      "importance": 7
-    }
-  ],
-  "politics_briefs": [
-    {
-      "title": "美伊在海湾地区交换军事打击",
-      "url": "https://www.bbc.com/news/articles/cvgzgyjk2weo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "summary": "美军打击伊朗无人机和雷达站，伊朗回应打击科威特和巴林的美军基地，这是对停火协议的最新考验，加剧地区紧张局势。（多家报道）",
-      "importance": 9
-    },
-    {
-      "title": "德国东部选举极右翼支持率领先",
-      "url": "https://www.dw.com/zh/德国经济能否承受德东社会大步向右转？/a-77417207?maca=chi-rss-chi-all-1127-rdf",
-      "source": "DW 中文",
-      "summary": "德国东部两州将举行州议会选举，极右翼德国选择党支持率领先，但经济精英认为其激进政治不构成经济威胁，反映政治分化。",
-      "importance": 6
-    }
-  ],
-  "editor_note": "今日国际局势紧张与AI技术突破并行，美伊冲突牵动地缘神经，市场波动显现科技股风险，提醒投资者保持警惕。",
-  "keywords": [
-    "美伊冲突",
-    "AI代理",
-    "ChatGPT",
-    "美股下跌",
-    "奥地利降级",
-    "德国选举",
-    "印度热浪",
-    "NVIDIA模型"
-  ],
+  "hero_headline": "",
+  "daily_overview": "",
+  "tech_briefs": [],
+  "finance_briefs": [],
+  "politics_briefs": [],
+  "editor_note": "",
+  "keywords": [],
   "trading": {
-    "market_overview": "整体市场技术面呈现普遍回调格局。美股方面，主要指数ETF（如SPY、QQQ）日内跌幅显著，RSI回落至50下方中性区间，部分科技巨头（如TSLA、META）出现MACD死叉与空头排列信号，显示调整压力。加密货币市场情绪极度悲观，恐慌贪婪指数仅为12，总市值24小时下跌2.25%，BTC、ETH、SOL的RSI均处于12-16的极度超卖区域，且价格远低于主要均线，空头趋势明确。中概股板块整体疲软，多数标的呈现空头排列，但腾讯控股因MACD金叉出现短期技术性反弹信号。商品与外汇市场中，黄金期货跌破200日均线，RSI偏弱；美元指数（DXY）则保持多头排列，逼近52周高点。VIX恐慌指数单日暴涨近40%，突破均线压制，凸显市场避险情绪升温。",
+    "market_overview": "美股技术面显示，主要指数近期承压。S&P 500 ETF当前价格737.55，较一周前下跌2.5%，RSI(14)为49.4，略低于中性线50，但长期均线如SMA200仍呈多头排列，表明整体趋势尚未完全转弱。纳斯达克100 ETF RSI 48.3，MACD出现死叉，但价格仍高于长期均线。加密货币领域，恐慌贪婪指数跌至12，反映市场极度恐慌；比特币价格61230.49美元，5日跌幅14.15%，RSI 16.9严重超卖，以太坊和Solana同样处于超卖区域，技术面呈现空头排列。中概股方面，阿里巴巴RSI 37.2，价格低于所有短期均线，空头信号显著；腾讯控股虽MACD金叉，但整体趋势仍为熊市。商品与外汇市场，黄金期货价格4365.3，RSI 34.2显示动量疲软；美元指数100.07，RSI 66偏强，接近52周高点。总体来看，各资产技术状态分化明显，加密市场超卖，美股中性偏弱，商品外汇相对平稳。",
     "watchlist": [
       {
-        "symbol": "SOL-USD",
-        "display_name": "Solana",
+        "symbol": "BTC-USD",
+        "display_name": "Bitcoin",
         "stance": "偏下行",
-        "rationale": "当前价格62.74美元，RSI14为15.9，已进入极度超卖区间。过去5个交易日跌幅达22.63%，价格远低于20日均线（79.97）、50日均线（84.5）和200日均线（102.39），呈现典型空头排列。MACD柱状图为负且持续扩大，表明下行动量仍在延续。"
+        "rationale": "比特币当前价格61230.49美元，单日微涨0.51%但5日大幅下跌14.15%。RSI(14)仅为16.9，处于极度超卖状态，显示短期动量疲弱。MACD值为-3891.8952，低于信号线-2369.3506，且指标呈空头排列，技术面明确偏向下行，接近52周低点。"
       },
       {
-        "symbol": "VIX",
+        "symbol": "^VIX",
         "display_name": "VIX 恐慌指数",
         "stance": "偏上行",
-        "rationale": "当前价格21.51，单日暴涨39.68%，5日涨幅达40.4%。价格已升至20日均线（17.12）之上，RSI14读数为65.7，处于正常偏强区域。MACD已形成金叉，且指标呈现多头排列，显示短期的上行动量和市场恐慌情绪急剧升温。"
+        "rationale": "VIX恐慌指数当前21.51，单日暴涨39.68%，5日涨幅达40.4%。RSI(14)为65.7，接近超买区域。MACD出现金叉，值为-0.3953高于信号线-0.7728，且指标呈多头排列，技术状态显示强烈上行动能。"
       },
       {
-        "symbol": "0700.HK",
-        "display_name": "腾讯控股 (0700.HK)",
-        "stance": "偏上行",
-        "rationale": "尽管整体趋势为「空头排列」，但最新信号显示「MACD 金叉」，短期动量可能转向。过去5个交易日价格上涨6.09%，是少数录得正收益的中概股。当前RSI14为47.1，处于中性区间，价格略高于20日均线（451.94），提供了初步支撑。"
-      },
-      {
-        "symbol": "GC=F",
-        "display_name": "黄金期货",
+        "symbol": "SPY",
+        "display_name": "S&P 500 ETF",
         "stance": "中性",
-        "rationale": "当前价格4365.3，日内及5日分别下跌2.47%和4.28%。RSI14为34.2，接近但未进入超卖区。价格处于200日均线（4398.55）附近，趋势标记为「中性」。MACD为负值，但信号线接近，未形成明确趋势信号，整体处于技术性整理状态。"
+        "rationale": "标普500 ETF价格737.55，较前一日下跌2.58%，5日跌幅2.5%。RSI(14)为49.4，接近中性区域50。MACD为9.9808，略低于信号线12.0634，但趋势为多头排列，价格仍高于长期均线SMA200的683.93，整体技术面呈现中性震荡。"
       }
     ],
-    "risk_caveat": "本报告基于历史行情数据计算的技术指标生成，仅供技术指标解读参考，不构成任何投资建议。技术指标反映的是过去走势的统计特征，过去走势不代表未来表现。市场存在波动风险，决策需结合个人风险承受能力独立判断。",
+    "risk_caveat": "过去走势不代表未来表现，本报告仅供技术指标解读参考。技术分析基于历史数据计算，无法预测未来市场动向，投资者应结合自身情况谨慎决策。",
     "tickers": [
       {
         "symbol": "SPY",
@@ -354,18 +273,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 61032.01,
-        "pct1Day": 0.17947676110653676,
-        "pct5Day": -14.424840323582245,
-        "pct52WeekHigh": -51.63792124554678,
-        "pct52WeekLow": 2.5806253716072165,
-        "sma20": 72366.6388671875,
-        "sma50": 76057.059140625,
-        "sma200": 78617.2402734375,
-        "rsi14": 15.983122068894758,
-        "macd": -3907.7280950776476,
-        "macdSignal": -2372.5171692170784,
-        "macdHistogram": -1535.2109258605692,
+        "currentPrice": 61230.49,
+        "pct1Day": 0.5052668268039309,
+        "pct5Day": -14.146544431105902,
+        "pct52WeekHigh": -51.48064467229967,
+        "pct52WeekLow": 2.9142241261584134,
+        "sma20": 72376.5626953125,
+        "sma50": 76061.028671875,
+        "sma200": 78618.23265625,
+        "rsi14": 16.93196484830075,
+        "macd": -3891.895206901012,
+        "macdSignal": -2369.3505915817514,
+        "macdHistogram": -1522.5446153192606,
         "trend": "bearish",
         "rsiState": "oversold",
         "signals": [
@@ -389,18 +308,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1574.64,
-        "pct1Day": -0.39350964278201483,
-        "pct5Day": -21.39460151703908,
-        "pct52WeekHigh": -68.21306275489614,
-        "pct52WeekLow": 4.117344261872346,
-        "sma20": 1981.0482666015625,
-        "sma50": 2173.25205078125,
-        "sma200": 2456.683046875,
-        "rsi14": 12.807481200798932,
-        "macd": -139.82636633866628,
-        "macdSignal": -95.43486154253739,
-        "macdHistogram": -44.391504796128885,
+        "currentPrice": 1581.8,
+        "pct1Day": 0.0594081485592862,
+        "pct5Day": -21.037177183135462,
+        "pct52WeekHigh": -68.0685252919364,
+        "pct52WeekLow": 4.590773226534104,
+        "sma20": 1981.406268310547,
+        "sma50": 2173.3952514648436,
+        "sma200": 2456.7188470458987,
+        "rsi14": 13.07438026951938,
+        "macd": -139.25519552091328,
+        "macdSignal": -95.3206273789868,
+        "macdHistogram": -43.934568141926476,
         "trend": "bearish",
         "rsiState": "oversold",
         "signals": [
@@ -420,18 +339,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 62.74,
-        "pct1Day": -1.176529006284486,
-        "pct5Day": -22.62633486378457,
-        "pct52WeekHigh": -75.22213783900234,
-        "pct52WeekLow": 3.808363869990365,
-        "sma20": 79.97178535461425,
-        "sma50": 84.50117614746094,
-        "sma200": 102.39238903045654,
-        "rsi14": 15.870575173629547,
-        "macd": -5.273799162380783,
-        "macdSignal": -3.0685943011009074,
-        "macdHistogram": -2.2052048612798756,
+        "currentPrice": 63.26,
+        "pct1Day": -0.3574629413062956,
+        "pct5Day": -21.9850485094519,
+        "pct52WeekHigh": -75.01677462058159,
+        "pct52WeekLow": 4.668745591577783,
+        "sma20": 79.99778518676757,
+        "sma50": 84.51157608032227,
+        "sma200": 102.39498901367188,
+        "rsi14": 16.185298350426464,
+        "macd": -5.232317948688859,
+        "macdSignal": -3.0602980583625223,
+        "macdHistogram": -2.172019890326337,
         "trend": "bearish",
         "rsiState": "oversold",
         "signals": [
@@ -735,13 +654,13 @@
       "timestamp": "2026-06-06T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2176333344612.8457,
-      "total24hVolumeUsd": 167223923420.76624,
-      "marketCapChangePct24h": -2.250792895433908,
-      "btcDominance": 56.11997100223212,
-      "ethDominance": 8.729951653204608,
-      "activeCryptocurrencies": 17372
+      "totalMarketCapUsd": 2184182702405.9758,
+      "total24hVolumeUsd": 164537002708.3175,
+      "marketCapChangePct24h": -2.5859908590454466,
+      "btcDominance": 56.137588012335414,
+      "ethDominance": 8.731412966459377,
+      "activeCryptocurrencies": 17367
     },
-    "generated_at": "2026-06-06T08:11:39.277Z"
+    "generated_at": "2026-06-06T09:16:01.300Z"
   }
 }
