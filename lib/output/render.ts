@@ -5,7 +5,7 @@ import type {
   TradingSection,
 } from "../ai/pipeline";
 import type { WatchlistPick } from "../ai/trading-commentary";
-import { REPORT_LOCALE } from "../sources/registry";
+import { REPORT_LOCALE, sources as REGISTRY_SOURCES } from "../sources/registry";
 import { getReportTz } from "../utils";
 import type { Category, SourceDef } from "../sources/types";
 import { V2EX_OFF_TOPIC_RE } from "../sources/v2ex";
@@ -30,6 +30,7 @@ const TEXTS_ZH = {
   catPolitics: "时政观察",
   catTrading: "市场行情",
   catCommunity: "社区讨论",
+  catForeignMedia: "国外媒体",
   subAiNews: "AI 媒体",
   subTrendingPapers: "热门论文",
   subXViral: "X 推文",
@@ -79,6 +80,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   catPolitics: "World",
   catTrading: "Markets",
   catCommunity: "Community",
+  catForeignMedia: "Foreign Media",
   subAiNews: "AI Media",
   subTrendingPapers: "Trending Papers",
   subXViral: "X Viral",
@@ -160,6 +162,8 @@ const CATEGORY_DIGEST_LABELS: Record<Category, string> = {
   finance: STR.catFinance,
   politics: STR.catPolitics,
 };
+
+const BPC_PANEL_ID = "foreign-media";
 
 /**
  * L2 ordering per category. Categories not listed render flat (no L2 tabs).
@@ -411,6 +415,52 @@ export function groupRaw(
   return out;
 }
 
+function buildBpcSubgroups(raw: RawByCategory, registry: SourceDef[]): SubGroup[] {
+  const bpcSources = registry.filter((s) => s.enabled !== false && s.type === "bpc");
+  if (bpcSources.length === 0) return [];
+
+  const buckets = new Map<string, ArticleInput[]>();
+  for (const source of bpcSources) buckets.set(source.id, []);
+
+  for (const subs of Object.values(raw)) {
+    for (const sub of subs) {
+      for (const source of sub.sources) {
+        for (const item of source.items) {
+          const bucket = buckets.get(item.sourceId);
+          if (bucket) bucket.push(item);
+        }
+      }
+    }
+  }
+
+  const sourceGroups: SourceGroup[] = bpcSources
+    .map((source) => {
+      const deduped = new Map<string, ArticleInput>();
+      for (const item of buckets.get(source.id) ?? []) {
+        if (!deduped.has(item.url)) deduped.set(item.url, item);
+      }
+      const items = [...deduped.values()].sort(
+        (a, b) => (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0),
+      );
+      return {
+        sourceId: source.id,
+        sourceName: source.name,
+        items,
+      };
+    })
+    .filter((group) => group.items.length > 0);
+
+  if (sourceGroups.length === 0) return [];
+
+  return [
+    {
+      id: BPC_PANEL_ID,
+      name: STR.catForeignMedia,
+      sources: sourceGroups,
+    },
+  ];
+}
+
 // ----- HTML helpers -----
 
 function escapeHtml(s: string): string {
@@ -540,6 +590,7 @@ export function renderHtml(
   // forums as their own top-level tab per UX preference.
   const techMainSubs = raw.tech.filter((s) => TECH_MAIN_SUBS.has(s.id));
   const techCommunitySubs = raw.tech.filter((s) => TECH_COMMUNITY_SUBS.has(s.id));
+  const bpcSubs = buildBpcSubgroups(raw, REGISTRY_SOURCES);
 
   const sumItems = (subs: SubGroup[]) =>
     subs.reduce(
@@ -551,6 +602,7 @@ export function renderHtml(
     finance: sumItems(raw.finance),
     politics: sumItems(raw.politics),
     community: sumItems(techCommunitySubs),
+    foreignMedia: sumItems(bpcSubs),
   };
 
   return `<!doctype html>
@@ -1204,6 +1256,7 @@ export function renderHtml(
     <button class="tab" data-tab="politics">${CATEGORY_LABELS.politics}<span class="count">${counts.politics}</span></button>
     <button class="tab" data-tab="finance">${CATEGORY_LABELS.finance}<span class="count">${counts.finance}</span></button>
     ${techCommunitySubs.length > 0 ? `<button class="tab" data-tab="community">${STR.catCommunity}<span class="count">${counts.community}</span></button>` : ""}
+    ${bpcSubs.length > 0 ? `<button class="tab" data-tab="foreign-media">${STR.catForeignMedia}<span class="count">${counts.foreignMedia}</span></button>` : ""}
   </nav>
 
   <section class="panel active" data-panel="tech">
@@ -1218,6 +1271,9 @@ export function renderHtml(
   </section>
   ${techCommunitySubs.length > 0 ? `<section class="panel" data-panel="community">
     ${renderRawCategoryPanel("tech", techCommunitySubs)}
+  </section>` : ""}
+  ${bpcSubs.length > 0 ? `<section class="panel" data-panel="foreign-media">
+    ${renderRawCategoryPanel("finance", bpcSubs)}
   </section>` : ""}
 
   <footer>
