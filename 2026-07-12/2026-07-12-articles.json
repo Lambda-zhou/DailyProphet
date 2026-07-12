@@ -3,64 +3,10 @@
   "articles": [
     {
       "sourceId": "github-trending",
-      "title": "catchorg/Catch2",
-      "url": "https://github.com/catchorg/Catch2",
-      "excerpt": "A modern, C++-native, test framework for unit-tests, TDD and BDD - using C++14, C++17 and later (C++11 support is in v2.x branch, and C++03 on the Catch1.x branch)",
-      "meta": "C++ · ★ 21,149 · 🍴 3,433 · 📈 113 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "abseil/abseil-cpp",
-      "url": "https://github.com/abseil/abseil-cpp",
-      "excerpt": "Abseil Common Libraries (C++)",
-      "meta": "C++ · ★ 17,866 · 🍴 3,213 · 📈 118 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "davila7/claude-code-templates",
-      "url": "https://github.com/davila7/claude-code-templates",
-      "excerpt": "CLI tool for configuring and monitoring Claude Code",
-      "meta": "Python · ★ 29,088 · 🍴 3,191 · 📈 232 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "google-labs-code/stitch-skills",
-      "url": "https://github.com/google-labs-code/stitch-skills",
-      "excerpt": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
-      "meta": "TypeScript · ★ 7,142 · 🍴 950 · 📈 340 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "hashicorp/terraform",
-      "url": "https://github.com/hashicorp/terraform",
-      "excerpt": "Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.",
-      "meta": "Go · ★ 49,402 · 🍴 10,685 · 📈 229 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "zeux/meshoptimizer",
-      "url": "https://github.com/zeux/meshoptimizer",
-      "excerpt": "Mesh optimization library that makes meshes smaller and faster to render",
-      "meta": "C++ · ★ 8,160 · 🍴 788 · 📈 110 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "openai/plugins",
-      "url": "https://github.com/openai/plugins",
-      "excerpt": "OpenAI Plugins",
-      "meta": "JavaScript · ★ 4,462 · 🍴 659 · 📈 29 stars today",
+      "title": "Dicklesworthstone/destructive_command_guard",
+      "url": "https://github.com/Dicklesworthstone/destructive_command_guard",
+      "excerpt": "The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.",
+      "meta": "Rust · ★ 2,281 · 🍴 85 · 📈 444 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
@@ -69,106 +15,34 @@
       "title": "wonderwhy-er/DesktopCommanderMCP",
       "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
       "excerpt": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
-      "meta": "TypeScript · ★ 7,829 · 🍴 977 · 📈 909 stars today",
+      "meta": "TypeScript · ★ 7,854 · 🍴 978 · 📈 909 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "chriskohlhoff/asio",
-      "url": "https://github.com/chriskohlhoff/asio",
-      "excerpt": "Asio C++ Library",
-      "meta": "C++ · ★ 6,152 · 🍴 1,510 · 📈 76 stars today",
+      "title": "HKUDS/Vibe-Trading",
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "excerpt": "\"Vibe-Trading: Your Personal Trading Agent\"",
+      "meta": "Python · ★ 20,006 · 🍴 3,514 · 📈 776 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "oven-sh/bun",
-      "url": "https://github.com/oven-sh/bun",
-      "excerpt": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
-      "meta": "Rust · ★ 94,599 · 🍴 4,961 · 📈 658 stars today",
+      "title": "PrefectHQ/prefect",
+      "url": "https://github.com/PrefectHQ/prefect",
+      "excerpt": "Prefect is a workflow orchestration framework for building resilient data pipelines in Python.",
+      "meta": "Python · ★ 22,996 · 🍴 2,379 · 📈 55 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "actions/checkout",
-      "url": "https://github.com/actions/checkout",
-      "excerpt": "Action for checking out a repo",
-      "meta": "TypeScript · ★ 8,479 · 🍴 2,717 · 📈 8 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "home-assistant/core",
-      "url": "https://github.com/home-assistant/core",
-      "excerpt": "🏡 Open source home automation that puts local control and privacy first.",
-      "meta": "Python · ★ 88,766 · 🍴 38,052 · 📈 80 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "microsoft/PowerToys",
-      "url": "https://github.com/microsoft/PowerToys",
-      "excerpt": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-      "meta": "C · ★ 136,471 · 🍴 8,366 · 📈 39 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "cypress-io/cypress",
-      "url": "https://github.com/cypress-io/cypress",
-      "excerpt": "Fast, easy and reliable testing for anything that runs in a browser.",
-      "meta": "TypeScript · ★ 50,646 · 🍴 3,591 · 📈 19 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "vercel/next.js",
-      "url": "https://github.com/vercel/next.js",
-      "excerpt": "The React Framework",
-      "meta": "JavaScript · ★ 140,989 · 🍴 31,556 · 📈 334 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "DayuanJiang/next-ai-draw-io",
-      "url": "https://github.com/DayuanJiang/next-ai-draw-io",
-      "excerpt": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.",
-      "meta": "TypeScript · ★ 33,360 · 🍴 3,611 · 📈 81 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "malisper/pgrust",
-      "url": "https://github.com/malisper/pgrust",
-      "excerpt": "Postgres rewritten in Rust, now passing 100% of the Postgres regression tests",
-      "meta": "Rust · ★ 2,172 · 🍴 56 · 📈 774 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "dotnet/aspnetcore",
-      "url": "https://github.com/dotnet/aspnetcore",
-      "excerpt": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
-      "meta": "C# · ★ 38,325 · 🍴 10,885 · 📈 4 stars today",
-      "category": "tech",
-      "source": "GitHub Trending"
-    },
-    {
-      "sourceId": "github-trending",
-      "title": "prisma/prisma",
-      "url": "https://github.com/prisma/prisma",
-      "excerpt": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
-      "meta": "TypeScript · ★ 47,294 · 🍴 2,476 · 📈 37 stars today",
+      "title": "Shubhamsaboo/awesome-llm-apps",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "excerpt": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+      "meta": "Python · ★ 118,184 · 🍴 17,579 · 📈 549 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
@@ -177,43 +51,106 @@
       "title": "anthropics/claude-cookbooks",
       "url": "https://github.com/anthropics/claude-cookbooks",
       "excerpt": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
-      "meta": "Jupyter Notebook · ★ 48,031 · 🍴 5,686 · 📈 219 stars today",
+      "meta": "Jupyter Notebook · ★ 48,113 · 🍴 5,697 · 📈 219 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "obra/superpowers",
-      "url": "https://github.com/obra/superpowers",
-      "excerpt": "An agentic skills framework & software development methodology that works.",
-      "meta": "Shell · ★ 252,594 · 🍴 22,553 · 📈 740 stars today",
+      "title": "home-assistant/core",
+      "url": "https://github.com/home-assistant/core",
+      "excerpt": "🏡 Open source home automation that puts local control and privacy first.",
+      "meta": "Python · ★ 88,836 · 🍴 38,056 · 📈 80 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "nasa/fprime",
-      "url": "https://github.com/nasa/fprime",
-      "excerpt": "F´ - A flight software and embedded systems framework",
-      "meta": "C++ · ★ 11,523 · 🍴 1,730 · 📈 22 stars today",
+      "title": "Crosstalk-Solutions/project-nomad",
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "excerpt": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+      "meta": "TypeScript · ★ 33,591 · 🍴 3,373 · 📈 122 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "ansible/ansible",
-      "url": "https://github.com/ansible/ansible",
-      "excerpt": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on rem",
-      "meta": "Python · ★ 69,619 · 🍴 24,280 · 📈 24 stars today",
+      "title": "ColeMurray/background-agents",
+      "url": "https://github.com/ColeMurray/background-agents",
+      "excerpt": "An open-source background agents coding system",
+      "meta": "TypeScript · ★ 2,144 · 🍴 335 · 📈 9 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
     {
       "sourceId": "github-trending",
-      "title": "nuxt/nuxt",
-      "url": "https://github.com/nuxt/nuxt",
-      "excerpt": "the full-stack Vue framework",
-      "meta": "TypeScript · ★ 60,747 · 🍴 5,841 · 📈 16 stars today",
+      "title": "k1tbyte/Wand-Enhancer",
+      "url": "https://github.com/k1tbyte/Wand-Enhancer",
+      "excerpt": "Advanced UX and interoperability extension for Wand (WeMod) app",
+      "meta": "C# · ★ 6,521 · 🍴 18,496 · 📈 661 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "pingdotgg/t3code",
+      "url": "https://github.com/pingdotgg/t3code",
+      "excerpt": "",
+      "meta": "TypeScript · ★ 13,631 · 🍴 2,859 · 📈 79 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "virattt/ai-hedge-fund",
+      "url": "https://github.com/virattt/ai-hedge-fund",
+      "excerpt": "An AI Hedge Fund Team",
+      "meta": "Python · ★ 61,213 · 🍴 10,835 · 📈 109 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "chen08209/FlClash",
+      "url": "https://github.com/chen08209/FlClash",
+      "excerpt": "A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.",
+      "meta": "Dart · ★ 45,099 · 🍴 2,848 · 📈 151 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "davila7/claude-code-templates",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "excerpt": "CLI tool for configuring and monitoring Claude Code",
+      "meta": "Python · ★ 29,131 · 🍴 3,196 · 📈 232 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "par274/sharpemu",
+      "url": "https://github.com/par274/sharpemu",
+      "excerpt": "An experimental PlayStation 5 emulator project.",
+      "meta": "C# · ★ 964 · 🍴 61 · 📈 436 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "malisper/pgrust",
+      "url": "https://github.com/malisper/pgrust",
+      "excerpt": "Postgres rewritten in Rust, now passing 100% of the Postgres regression tests",
+      "meta": "Rust · ★ 2,242 · 🍴 58 · 📈 774 stars today",
+      "category": "tech",
+      "source": "GitHub Trending"
+    },
+    {
+      "sourceId": "github-trending",
+      "title": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "excerpt": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "meta": "CSS · ★ 3,908 · 🍴 238 · 📈 210 stars today",
       "category": "tech",
       "source": "GitHub Trending"
     },
@@ -230,7 +167,7 @@
       "sourceId": "v2ex-hot",
       "title": "grok-4.5 真的比 gpt-5.6 sol 好用吧",
       "url": "https://www.v2ex.com/t/1226656",
-      "excerpt": "20 回复 · 程序员 节点",
+      "excerpt": "22 回复 · 程序员 节点",
       "publishedAt": "2026-07-12T01:37:01.000Z",
       "category": "tech",
       "source": "V2EX"
@@ -241,6 +178,15 @@
       "url": "https://www.v2ex.com/t/1225970",
       "excerpt": "20 回复 · Apple 节点",
       "publishedAt": "2026-07-08T19:16:50.000Z",
+      "category": "tech",
+      "source": "V2EX"
+    },
+    {
+      "sourceId": "v2ex-hot",
+      "title": "突然发现 chatgpt 语音多了 live 功能，感觉练口语挺好的",
+      "url": "https://www.v2ex.com/t/1226716",
+      "excerpt": "19 回复 · 程序员 节点",
+      "publishedAt": "2026-07-12T07:52:36.000Z",
       "category": "tech",
       "source": "V2EX"
     },
@@ -430,15 +376,6 @@
       "url": "https://www.v2ex.com/t/1212706",
       "excerpt": "5 回复 · Rust 节点",
       "publishedAt": "2026-05-14T07:18:22.000Z",
-      "category": "tech",
-      "source": "V2EX"
-    },
-    {
-      "sourceId": "v2ex-hot",
-      "title": "分享一个 Codex 写简历, Markdown 转 PDF 神级工作流",
-      "url": "https://www.v2ex.com/t/1226621",
-      "excerpt": "4 回复 · 程序员 节点",
-      "publishedAt": "2026-07-11T14:27:00.000Z",
       "category": "tech",
       "source": "V2EX"
     },
@@ -1264,21 +1201,21 @@
     },
     {
       "sourceId": "huggingface-papers",
-      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
-      "url": "https://huggingface.co/papers/2607.07608",
-      "excerpt": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under a Markovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existing memory-augmented VLAs either expand the observation window or retrieve history from the memory b",
-      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Video-Oasis: Rethinking Evaluation of Video Understanding",
+      "url": "https://huggingface.co/papers/2603.29616",
+      "excerpt": "The inherent complexity of video understanding makes it difficult to determine whether Video-LLM benchmark performance stems from visual perception, linguistic reasoning, or knowledge priors. While many benchmarks have emerged to assess high-level reasoning, shared criteria for evaluating video unde",
+      "publishedAt": "2026-07-02T00:00:00.000Z",
       "meta": "👍 51",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
     },
     {
       "sourceId": "huggingface-papers",
-      "title": "Video-Oasis: Rethinking Evaluation of Video Understanding",
-      "url": "https://huggingface.co/papers/2603.29616",
-      "excerpt": "The inherent complexity of video understanding makes it difficult to determine whether Video-LLM benchmark performance stems from visual perception, linguistic reasoning, or knowledge priors. While many benchmarks have emerged to assess high-level reasoning, shared criteria for evaluating video unde",
-      "publishedAt": "2026-07-02T00:00:00.000Z",
-      "meta": "👍 50",
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "url": "https://huggingface.co/papers/2607.07608",
+      "excerpt": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under a Markovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existing memory-augmented VLAs either expand the observation window or retrieve history from the memory b",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "meta": "👍 51",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
     },
@@ -1304,21 +1241,11 @@
     },
     {
       "sourceId": "huggingface-papers",
-      "title": "LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL",
-      "url": "https://huggingface.co/papers/2607.04412",
-      "excerpt": "Reinforcement learning (RL) for non-verifiable instruction following increasingly relies on LLM judges with prompt-specific rubrics as reward signals. While recent methods adapt these rubrics to the evolving policy during training, the training prompts themselves remain static, drawn from fixed corp",
-      "publishedAt": "2026-07-05T00:00:00.000Z",
-      "meta": "👍 27",
-      "category": "tech",
-      "source": "HuggingFace Trending Papers"
-    },
-    {
-      "sourceId": "huggingface-papers",
       "title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models",
       "url": "https://huggingface.co/papers/2607.08770",
       "excerpt": "Recovering high-quality video from sparse event streams is a challenging task. Regression methods often blur textures, while existing generative models struggle with long-term stability. We propose LongE2V, a novel approach that leverages pre-trained video diffusion priors to jointly handle event-ba",
       "publishedAt": "2026-07-09T00:00:00.000Z",
-      "meta": "👍 26",
+      "meta": "👍 27",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
     },
@@ -1328,7 +1255,17 @@
       "url": "https://huggingface.co/papers/2607.08768",
       "excerpt": "The rapid development of large language models and multimodal large language models has accelerated the emergence of proactive agents capable of operating everyday tools and assisting users in real-world environments. However, existing benchmarks struggle to evaluate such agents effectively, as they",
       "publishedAt": "2026-07-09T00:00:00.000Z",
-      "meta": "👍 26",
+      "meta": "👍 27",
+      "category": "tech",
+      "source": "HuggingFace Trending Papers"
+    },
+    {
+      "sourceId": "huggingface-papers",
+      "title": "LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL",
+      "url": "https://huggingface.co/papers/2607.04412",
+      "excerpt": "Reinforcement learning (RL) for non-verifiable instruction following increasingly relies on LLM judges with prompt-specific rubrics as reward signals. While recent methods adapt these rubrics to the evolving policy during training, the training prompts themselves remain static, drawn from fixed corp",
+      "publishedAt": "2026-07-05T00:00:00.000Z",
+      "meta": "👍 27",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
     },
@@ -1414,20 +1351,20 @@
     },
     {
       "sourceId": "huggingface-papers",
-      "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
-      "url": "https://huggingface.co/papers/2607.08716",
-      "excerpt": "In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed bey",
-      "publishedAt": "2026-07-09T00:00:00.000Z",
-      "meta": "👍 9",
+      "title": "Automating the Design of Embodied Agent Architectures",
+      "url": "https://huggingface.co/papers/2606.30111",
+      "excerpt": "Embodied agents are typically built as hand-designed compositions of perception, memory, planning, and action modules. This modularity exposes a large architectural design space, but current systems still rely on researcher intuition to choose where information is stored, how observations are proces",
+      "publishedAt": "2026-07-03T00:00:00.000Z",
+      "meta": "👍 10",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
     },
     {
       "sourceId": "huggingface-papers",
-      "title": "Automating the Design of Embodied Agent Architectures",
-      "url": "https://huggingface.co/papers/2606.30111",
-      "excerpt": "Embodied agents are typically built as hand-designed compositions of perception, memory, planning, and action modules. This modularity exposes a large architectural design space, but current systems still rely on researcher intuition to choose where information is stored, how observations are proces",
-      "publishedAt": "2026-07-03T00:00:00.000Z",
+      "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+      "url": "https://huggingface.co/papers/2607.08716",
+      "excerpt": "In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed bey",
+      "publishedAt": "2026-07-09T00:00:00.000Z",
       "meta": "👍 9",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
@@ -2364,6 +2301,24 @@
     },
     {
       "sourceId": "bloomberg-markets",
+      "title": "US-Iran Strikes Ratchet Up Tensions as Tehran Says Hormuz Shut",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-12/us-iran-trade-wave-of-attacks-as-tehran-says-hormuz-closed",
+      "excerpt": "US forces struck Iran for a third time in a week, prompting retaliatory attacks on at least five Arab nations as Tehran declared the Strait of Hormuz closed “until further notice.”",
+      "publishedAt": "2026-07-12T08:06:08.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Hormuz Route Open Despite Iran Declaration, Maritime Group Says",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-12/hormuz-route-open-despite-iran-declaration-maritime-group-says",
+      "excerpt": "The Strait of Hormuz’s southern route remained open to shipping on Sunday despite Iran declaring the waterway closed as tit-for-tat attacks between the US and Tehran escalated, a maritime advisory group said.",
+      "publishedAt": "2026-07-12T10:02:26.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
       "title": "Typhoon Bavi Weakens as Heavy Rain Spreads Across China",
       "url": "https://www.bloomberg.com/news/articles/2026-07-12/typhoon-bavi-weakens-as-heavy-rain-spreads-across-china",
       "excerpt": "China’s National Meteorological Center said Typhoon Bavi weakened to a severe tropical storm on Sunday morning after making landfall in Zhejiang.",
@@ -2615,24 +2570,6 @@
       "source": "Bloomberg Markets"
     },
     {
-      "sourceId": "bloomberg-markets",
-      "title": "Bloomberg Money 7/10/2026",
-      "url": "https://www.bloomberg.com/news/videos/2026-07-10/bloomberg-money-7-10-2026-video",
-      "excerpt": "Bloomberg Money takes the pulse of your financial life, powered by the reporting of our global newsroom. Today's guests are: University of Chicago Booth School Professor of Economics and Former Fed Governor Randall Kroszner and NewEdge Wealth CIO Cameron Dawson. (Source: Bloomberg)",
-      "publishedAt": "2026-07-10T22:00:10.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "SK Hynix Debut Is a Bet That AI Breaks Boom-and-Bust Chip Cycle",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle",
-      "excerpt": "South Korean memory chipmaker SK Hynix Inc. just pulled off the largest public listing by a foreign company in US market history. Shares soared 13% on their first day of trading.",
-      "publishedAt": "2026-07-10T21:52:56.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
       "sourceId": "wsj-markets",
       "title": "Stocks Sink in Broad AI Rout Sparked by China's DeepSeek",
       "url": "https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main",
@@ -2818,6 +2755,15 @@
       "url": "https://www.bbc.co.uk/news/articles/cly0l5d5xn7o?at_medium=RSS&at_campaign=rss",
       "excerpt": "The German supermarket's $9bn US push targets urban hubs like Manhattan. Can its discount model match Walmart?",
       "publishedAt": "2026-07-12T05:00:15.000Z",
+      "category": "finance",
+      "source": "BBC Business"
+    },
+    {
+      "sourceId": "bbc-business",
+      "title": "Reeves tells BBC: Burnham needs worked-through plan to govern from the start",
+      "url": "https://www.bbc.co.uk/news/articles/cwykdvgv4d4o?at_medium=RSS&at_campaign=rss",
+      "excerpt": "The Chancellor tells Laura Kuenssberg she will be handing over a stable economy to the incoming PM.",
+      "publishedAt": "2026-07-11T12:00:16.000Z",
       "category": "finance",
       "source": "BBC Business"
     },
@@ -3043,15 +2989,6 @@
       "url": "https://www.bbc.co.uk/news/articles/cd95wendvdeo?at_medium=RSS&at_campaign=rss",
       "excerpt": "A union says workers are \"in the crosshairs\" of automation as AI is being tested across ports.",
       "publishedAt": "2026-07-08T06:06:12.000Z",
-      "category": "finance",
-      "source": "BBC Business"
-    },
-    {
-      "sourceId": "bbc-business",
-      "title": "Jackdaw owner says gas field will 'not materially influence' climate change",
-      "url": "https://www.bbc.co.uk/news/articles/cly85e2z2n4o?at_medium=RSS&at_campaign=rss",
-      "excerpt": "The new assessment was required by the industry regulator, after it found several areas had not been adequately addressed in a previous submission.",
-      "publishedAt": "2026-07-08T12:59:00.000Z",
       "category": "finance",
       "source": "BBC Business"
     },
@@ -3357,25 +3294,34 @@
       "title": "US launches fresh strikes as Iran closes Strait of Hormuz",
       "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss",
       "excerpt": "The strikes follow an attack on a Cyprus -flagged vessel travelling through the critical waterway.",
-      "publishedAt": "2026-07-12T04:39:18.000Z",
+      "publishedAt": "2026-07-12T06:49:46.000Z",
       "category": "politics",
       "source": "BBC World"
     },
     {
       "sourceId": "bbc-world",
-      "title": "China's second typhoon in a week makes landfall",
+      "title": "US Senator and close Trump ally Lindsey Graham dies after 'brief and sudden illness'",
+      "url": "https://www.bbc.co.uk/news/articles/cvgj25j6nmeo?at_medium=RSS&at_campaign=rss",
+      "excerpt": "The influential politician had just returned from Kyiv, where he met Ukraine's President Volodymyr Zelensky on Friday.",
+      "publishedAt": "2026-07-12T09:47:43.000Z",
+      "category": "politics",
+      "source": "BBC World"
+    },
+    {
+      "sourceId": "bbc-world",
+      "title": "Badly burned British couple rescued from ravine during Spain wildfires",
+      "url": "https://www.bbc.co.uk/news/articles/cx2x7441762o?at_medium=RSS&at_campaign=rss",
+      "excerpt": "The unnamed pair were found semi-conscious with 40% burns after being trapped by the blazes raging through Almeria province.",
+      "publishedAt": "2026-07-12T10:18:02.000Z",
+      "category": "politics",
+      "source": "BBC World"
+    },
+    {
+      "sourceId": "bbc-world",
+      "title": "China evacuates nearly two million people as powerful typhoon makes landfall",
       "url": "https://www.bbc.co.uk/news/articles/cdxd3wkp2rzo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Nearly two million people are evacuated from eastern Zhejiang province, with the city of Wenzhou close to the path of the storm.",
-      "publishedAt": "2026-07-12T01:22:22.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
-      "url": "https://www.bbc.co.uk/news/articles/c4gykgyn1r4o?at_medium=RSS&at_campaign=rss",
-      "excerpt": "A 67 million-year-old Tyrannosaurus rex will go on sale in New York with a pre-sale value of $30m.",
-      "publishedAt": "2026-07-11T23:58:40.000Z",
+      "excerpt": "Schools, work and outdoor activities have been suspended in Zhejiang province and many transport services cancelled.",
+      "publishedAt": "2026-07-12T07:39:45.000Z",
       "category": "politics",
       "source": "BBC World"
     },
@@ -3390,28 +3336,19 @@
     },
     {
       "sourceId": "bbc-world",
+      "title": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
+      "url": "https://www.bbc.co.uk/news/articles/c4gykgyn1r4o?at_medium=RSS&at_campaign=rss",
+      "excerpt": "A 67 million-year-old Tyrannosaurus rex will go on sale in New York with a pre-sale value of $30m.",
+      "publishedAt": "2026-07-11T23:58:40.000Z",
+      "category": "politics",
+      "source": "BBC World"
+    },
+    {
+      "sourceId": "bbc-world",
       "title": "Trump administration subpoenas New York Times journalists over Air Force One reporting",
       "url": "https://www.bbc.co.uk/news/articles/cpd3g8q51g7o?at_medium=RSS&at_campaign=rss",
       "excerpt": "The reporters received the legal summons after they reported on alleged security issues with the president's new plane, which was gifted by Qatar.",
       "publishedAt": "2026-07-11T16:11:33.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Spain battles to contain one of its deadliest wildfires as at least 12 killed",
-      "url": "https://www.bbc.co.uk/news/articles/c1wyv383j2xo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "At least four Britons are believed to be among the victims of the blaze, which left another 23 people missing.",
-      "publishedAt": "2026-07-11T15:03:45.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Polish PM pledges memorial to victims of WW2 'genocide by Ukrainian nationalists'",
-      "url": "https://www.bbc.co.uk/news/articles/cze94x4361po?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Warsaw and Kyiv have for decades been at loggerheads over the killings of many thousands of civilians during World War Two.",
-      "publishedAt": "2026-07-11T21:56:52.000Z",
       "category": "politics",
       "source": "BBC World"
     },
@@ -3430,6 +3367,15 @@
       "url": "https://www.bbc.co.uk/news/articles/cd6e9zq87xvo?at_medium=RSS&at_campaign=rss",
       "excerpt": "Tabassum Khan has been facing online abuse after convicting 14 Hindu men in a lynching case.",
       "publishedAt": "2026-07-12T00:49:24.000Z",
+      "category": "politics",
+      "source": "BBC World"
+    },
+    {
+      "sourceId": "bbc-world",
+      "title": "Polish PM pledges memorial to victims of WW2 'genocide by Ukrainian nationalists'",
+      "url": "https://www.bbc.co.uk/news/articles/cze94x4361po?at_medium=RSS&at_campaign=rss",
+      "excerpt": "Warsaw and Kyiv have for decades been at loggerheads over the killings of many thousands of civilians during World War Two.",
+      "publishedAt": "2026-07-11T21:56:52.000Z",
       "category": "politics",
       "source": "BBC World"
     },
@@ -3457,60 +3403,6 @@
       "url": "https://www.bbc.co.uk/news/articles/cwyd7x22lp1o?at_medium=RSS&at_campaign=rss",
       "excerpt": "Local media say 21 people were saved after the boat overturned in rough seas near an island in south Vietnam.",
       "publishedAt": "2026-07-11T13:44:03.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "US pays out $3m to victims of mystery Havana Syndrome condition reported by spies",
-      "url": "https://www.bbc.co.uk/news/articles/cr7xyl78vnko?at_medium=RSS&at_campaign=rss",
-      "excerpt": "US officials and diplomats and their families began reporting a mysterious illness a decade ago.",
-      "publishedAt": "2026-07-11T13:11:52.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Landmark US housing bill becomes law despite Trump protest",
-      "url": "https://www.bbc.co.uk/news/articles/cn8qwj611qxo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "The president had wanted voter ID legislation passed before the housing law, which aims to reduce costs and increase supply.",
-      "publishedAt": "2026-07-11T13:35:09.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "New dinosaur species as long as cricket pitch discovered in Thailand",
-      "url": "https://www.bbc.co.uk/news/articles/crely7g8xepo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "The plant-eating dinosaur, named Uragasaurus kalasinensis, is thought to have lived about 150 million years ago.",
-      "publishedAt": "2026-07-11T08:23:45.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Australian killer's final police interview footage released",
-      "url": "https://www.bbc.co.uk/news/articles/cvglj4k03w4o?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Bradley Murdoch, 67, died in jail without disclosing where Peter Falconio's remains might be.",
-      "publishedAt": "2026-07-11T08:00:27.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Meta pulls new AI image feature after days of backlash",
-      "url": "https://www.bbc.co.uk/news/articles/c2dy6e8klw0o?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Meta's release this week of an AI feature that let people alter Instagram content drew swift blowback.",
-      "publishedAt": "2026-07-11T01:45:59.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "Small plane crash in Bahamas kills 10 people",
-      "url": "https://www.bbc.co.uk/news/articles/ckg47lz10p7o?at_medium=RSS&at_campaign=rss",
-      "excerpt": "The country's prime minister called the crash, on the country's independence day, a tragedy.",
-      "publishedAt": "2026-07-11T04:47:37.000Z",
       "category": "politics",
       "source": "BBC World"
     },
@@ -3552,19 +3444,10 @@
     },
     {
       "sourceId": "bbc-world",
-      "title": "Dating can be hard in South Korea - so the monks stepped in",
-      "url": "https://www.bbc.co.uk/news/articles/cgmdkw7wmkgo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Dating can be hard in South Korea. A group of monks hope a 30-hour rural retreat can help.",
-      "publishedAt": "2026-07-10T22:02:09.000Z",
-      "category": "politics",
-      "source": "BBC World"
-    },
-    {
-      "sourceId": "bbc-world",
-      "title": "At Canada's biggest rodeo, the starting gun is fired in the fight over Alberta separation",
-      "url": "https://www.bbc.co.uk/news/articles/c3eykgln5eeo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Canadian unity takes centre stage at the Calgary Stampede as fears of a Brexit-style upset looms over the October vote on Alberta's future.",
-      "publishedAt": "2026-07-11T00:00:42.000Z",
+      "title": "People flee as Russian strike hits near Ukraine coffee shop",
+      "url": "https://www.bbc.co.uk/news/videos/c8r27drk1nxo?at_medium=RSS&at_campaign=rss",
+      "excerpt": "Three cameras caught the moment people ducked then ran for cover in Sumy, in north eastern Ukraine.",
+      "publishedAt": "2026-07-12T09:03:17.000Z",
       "category": "politics",
       "source": "BBC World"
     },
@@ -3605,13 +3488,13 @@
       "source": "BBC World"
     },
     {
-      "sourceId": "bbc-world",
-      "title": "Boxy forms and odd lights: US declassifies more UFO files",
-      "url": "https://www.bbc.co.uk/news/videos/c8x2zez8qwzo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "The US government published a fourth instalment of unresolved cases, promising to release more files on a rolling basis.",
-      "publishedAt": "2026-07-10T15:28:17.000Z",
+      "sourceId": "guardian-world",
+      "title": "First patients enrolled in record-breaking Ebola treatment trial in DRC",
+      "url": "https://www.theguardian.com/global-development/2026/jul/12/record-breaking-ebola-treatment-trial-drc",
+      "excerpt": "Two drugs are being trialled in the Ituri region in a programme set up just six weeks after the outbreak was declared, with hopes it will reduce mortality rates There is no approved drug to help the medical teams scrabbling to save lives in the Ebola outbreak in the Democratic Republic of the Congo ",
+      "publishedAt": "2026-07-12T08:00:12.000Z",
       "category": "politics",
-      "source": "BBC World"
+      "source": "The Guardian"
     },
     {
       "sourceId": "guardian-world",
@@ -3646,15 +3529,6 @@
       "url": "https://www.theguardian.com/world/2026/jul/09/lgbtq-cruise-ship-refused-entry-egypt-turkey",
       "excerpt": "Scarlet Lady’s 2,000 passengers told of change as one of those onboard says they will ‘sparkle and spend elsewhere’ An LGBTQ+ cruise ship blocked from Turkish waters this week has been refused entry into Egypt. The Scarlet Lady’s 2,000 passengers, including the Broadway performer Patti LuPone, woke ",
       "publishedAt": "2026-07-09T12:59:24.000Z",
-      "category": "politics",
-      "source": "The Guardian"
-    },
-    {
-      "sourceId": "guardian-world",
-      "title": "Species’ ingenious survival strategies no match for human destruction, red list reveals",
-      "url": "https://www.theguardian.com/environment/2026/jul/09/species-ingenious-survival-strategies-no-match-human-destruction-red-list",
-      "excerpt": "Newly endangered animals include desert frogs and snails in extreme ocean depths, both threatened by mining Life has colonised every corner of the planet by evolving ingenious survival strategies but these are increasingly being overwhelmed by destructive human activities, this year’s red list of en",
-      "publishedAt": "2026-07-09T12:20:09.000Z",
       "category": "politics",
       "source": "The Guardian"
     },
@@ -3842,7 +3716,7 @@
       "sourceId": "guardian-world",
       "title": "US and Iran exchange strikes as Tehran again says strait of Hormuz is closed",
       "url": "https://www.theguardian.com/world/2026/jul/12/us-and-iran-exchange-strikes-as-tehran-again-says-strait-of-hormuz-is-closed",
-      "excerpt": "Tehran says vessel using unapproved route in strait was struck, drawing strikes from US forces to ‘degrade Iran’s ability to attack civilian mariners’ Iran and the US exchanged fresh strikes early on Sunday over what Tehran said was unauthorised use of the strait of Hormuz by a container ship, raisi",
+      "excerpt": "Tehran says vessel using unapproved route in strait was struck, drawing retaliation from US forces Iran and the US exchanged fresh strikes early on Sunday over what Tehran said was unauthorised use of the strait of Hormuz by a container ship, raising further doubts about the prospects of talks to ag",
       "publishedAt": "2026-07-12T05:27:38.000Z",
       "category": "politics",
       "source": "The Guardian"
@@ -3885,10 +3759,46 @@
     },
     {
       "sourceId": "nyt-world",
-      "title": "U.S. Strikes Iran After Iran Fires on Ship in Strait of Hormuz",
-      "url": "https://www.nytimes.com/2026/07/11/world/middleeast/iran-araghchi-oman-iran-strait-of-hormuz.html",
-      "excerpt": "Iran’s attack on a container ship came hours after a meeting between the foreign ministers of Iran and Oman about opening the strait to traffic.",
-      "publishedAt": "2026-07-12T01:08:40.000Z",
+      "title": "Hard-Liners in Iran Want to Keep Fighting America",
+      "url": "https://www.nytimes.com/2026/07/12/world/middleeast/iran-united-states-hard-liners.html",
+      "excerpt": "With much of their leadership killed in the war, Iran’s conservatives have sought to fill the void and intensify the fight against the United States.",
+      "publishedAt": "2026-07-12T09:25:20.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
+      "title": "How Putin Turned Japan Into a Den of Spies",
+      "url": "https://www.nytimes.com/2026/07/12/world/asia/russia-spies-japan-war-drones-electronics.html",
+      "excerpt": "Operating out of a Tokyo high-rise, a military intelligence unit finds the high-tech equipment that Russia needs to wage war.",
+      "publishedAt": "2026-07-12T04:01:11.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
+      "title": "Inside Herat, Where a Taliban Campaign Targets a Cosmopolitan Outpost",
+      "url": "https://www.nytimes.com/2026/07/12/world/asia/taliban-morality-police-herat-protests.html",
+      "excerpt": "Afghanistan’s leader has exerted full control over a city that once enjoyed looser social norms, even under Taliban rule.",
+      "publishedAt": "2026-07-12T09:14:10.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
+      "title": "Typhoon Bavi Hits China, Causing Evacuations, Floods and Flight Delays",
+      "url": "https://www.nytimes.com/2026/07/12/world/asia/typhoon-bavi-china.html",
+      "excerpt": "Typhoon Bavi made landfall in China after killing 17 in the Philippines, skirting Japan and hitting Taiwan. At its largest, the storm was about the width of France.",
+      "publishedAt": "2026-07-12T07:17:40.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
+      "title": "As India Erases Its Colonial Past, Delhi’s Elite Feel Targeted",
+      "url": "https://www.nytimes.com/2026/07/12/world/asia/india-gymkhana-club-eviction-colonialism.html",
+      "excerpt": "India’s government wants to shut down Delhi’s Gymkhana Club, which the prime minister calls a vestige of colonialism. Some members suspect a different motive.",
+      "publishedAt": "2026-07-12T04:01:13.000Z",
       "category": "politics",
       "source": "NYT World"
     },
@@ -3975,55 +3885,10 @@
     },
     {
       "sourceId": "nyt-world",
-      "title": "After Venezuela Earthquakes, a Youth Baseball League Counts the Dead",
-      "url": "https://www.nytimes.com/2026/07/10/world/americas/venezuela-earthquake-death-baseball-los-criollitos.html",
-      "excerpt": "Children who played for Venezuela’s youth baseball league, a symbol of national pride, have been left injured, orphaned or dead.",
-      "publishedAt": "2026-07-10T09:01:59.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "Moscow Still Has Art and Culture. Just Don’t Say ‘Ukraine.’",
-      "url": "https://www.nytimes.com/2026/07/10/world/europe/russia-moscow-ukraine-war.html",
-      "excerpt": "An eerie limbo prevails at small art shows, independent theaters and private political clubs, where the war is the elephant in the room.",
-      "publishedAt": "2026-07-10T13:03:34.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "Royal Rapprochement: Harry and Meghan Pay a Rare Visit to the King and Queen",
-      "url": "https://www.nytimes.com/2026/07/10/world/europe/harry-meghan-visit-charles-camilla.html",
-      "excerpt": "Friday’s visit to King Charles and Queen Camilla signaled a détente in relations with Prince Harry and his wife, who stepped down from royal duties and moved to the United States in 2020.",
-      "publishedAt": "2026-07-11T01:37:41.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "Fighting Fires With Figures, These Experts Are Trying to Stop Europe From Burning",
-      "url": "https://www.nytimes.com/2026/07/10/world/europe/fire-climate-change-heat-wave-global-warming.html",
-      "excerpt": "A team of engineers, foresters and scientists is helping the continent prepare for wildfires from a giant science park in Italy. Their arsenal includes satellites, weather models and expert analysis.",
-      "publishedAt": "2026-07-10T13:08:42.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "As India Erases Its Colonial Past, Delhi’s Elite Feel Targeted",
-      "url": "https://www.nytimes.com/2026/07/12/world/asia/india-gymkhana-club-eviction-colonialism.html",
-      "excerpt": "India’s government wants to shut down Delhi’s Gymkhana Club, which the prime minister calls a vestige of colonialism. Some members suspect a different motive.",
-      "publishedAt": "2026-07-12T04:01:13.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "How Putin Turned Japan Into a Den of Spies",
-      "url": "https://www.nytimes.com/2026/07/12/world/asia/russia-spies-japan-war-drones-electronics.html",
-      "excerpt": "Operating out of a Tokyo high-rise, a military intelligence unit finds the high-tech equipment that Russia needs to wage war.",
-      "publishedAt": "2026-07-12T04:01:11.000Z",
+      "title": "Trump Sought an Iran War Exit. Putin Pushed On in Ukraine. Now Both Are Stuck.",
+      "url": "https://www.nytimes.com/2026/07/12/world/europe/trump-putin-war-iran-ukraine.html",
+      "excerpt": "The Iran and Ukraine wars underline the common limits of military force in achieving political ends, but also the differences between a dug-in Russian president and a vacillating American one.",
+      "publishedAt": "2026-07-12T09:01:28.000Z",
       "category": "politics",
       "source": "NYT World"
     },
@@ -4032,7 +3897,7 @@
       "title": "Oil Prices Set for More Volatility After Latest Iranian Attack in Strait of Hormuz",
       "url": "https://www.nytimes.com/2026/07/11/world/middleeast/strait-hormuz-shipping-oil-prices.html",
       "excerpt": "Crude oil prices jumped above prewar levels this week, demonstrating Iran’s capacity to move energy prices by projecting power in the Strait of Hormuz.",
-      "publishedAt": "2026-07-12T02:13:22.000Z",
+      "publishedAt": "2026-07-12T07:24:55.000Z",
       "category": "politics",
       "source": "NYT World"
     },
@@ -4083,6 +3948,15 @@
     },
     {
       "sourceId": "nyt-world",
+      "title": "U.S. Strikes Iran After Iran Fires on Ship in Strait of Hormuz",
+      "url": "https://www.nytimes.com/2026/07/11/world/middleeast/iran-araghchi-oman-iran-strait-of-hormuz.html",
+      "excerpt": "Iran’s attack on a container ship came hours after a meeting between the foreign ministers of Iran and Oman about opening the strait to traffic.",
+      "publishedAt": "2026-07-12T01:08:40.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
       "title": "Gravitational Pull",
       "url": "https://www.nytimes.com/2026/07/11/briefing/gravitational-pull.html",
       "excerpt": "We think and dream and fuss and project entire worlds into existence. Meanwhile, the earth’s orbit continues and the sun goes on shining.",
@@ -4128,6 +4002,15 @@
     },
     {
       "sourceId": "nyt-world",
+      "title": "Royal Rapprochement: Harry and Meghan Pay a Rare Visit to the King and Queen",
+      "url": "https://www.nytimes.com/2026/07/10/world/europe/harry-meghan-visit-charles-camilla.html",
+      "excerpt": "Friday’s visit to King Charles and Queen Camilla signaled a détente in relations with Prince Harry and his wife, who stepped down from royal duties and moved to the United States in 2020.",
+      "publishedAt": "2026-07-11T01:37:41.000Z",
+      "category": "politics",
+      "source": "NYT World"
+    },
+    {
+      "sourceId": "nyt-world",
       "title": "Trump Cuts Habitat Protections for Endangered Species",
       "url": "https://www.nytimes.com/2026/07/10/climate/endangered-species-act-harm.html",
       "excerpt": "The rule change ends a safeguard that had been in place for 50 years and could hasten the demise of imperiled animals.",
@@ -4141,15 +4024,6 @@
       "url": "https://www.nytimes.com/2026/07/10/world/asia/girl-riots-west-bengal-baruipur.html",
       "excerpt": "After promising to improve safety for women in the Indian state, the party of Prime Minister Narendra Modi is facing public anger after the death of an 11-year-old girl.",
       "publishedAt": "2026-07-10T17:56:37.000Z",
-      "category": "politics",
-      "source": "NYT World"
-    },
-    {
-      "sourceId": "nyt-world",
-      "title": "Museum Spreads 800 Pounds of Peanut Butter in Tribute to Dutch Artist",
-      "url": "https://www.nytimes.com/2026/07/10/arts/dutch-museum-peanut-butter-floor-art-wim-schippers.html",
-      "excerpt": "An installation honoring the artist, Wim T. Schippers, features a 270-square-foot hexagon spread on the floor of a museum in Rotterdam.",
-      "publishedAt": "2026-07-10T22:25:30.000Z",
       "category": "politics",
       "source": "NYT World"
     },
@@ -4245,6 +4119,69 @@
     },
     {
       "sourceId": "dw-chinese",
+      "title": "德国政经界呼吁将实现气候中和的目标推迟至2050年",
+      "url": "https://www.dw.com/zh/德国政经界呼吁将实现气候中和的目标推迟至2050年/a-77923039?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "据德国《世界报周日版》报道，来自德国商界、工会及基民盟的重量级人物共同呼吁将实现气候中和的目标推迟五年，延至2050年。绿党对此表示反对，并认为“一个具有竞争力的经济体能迅速摆脱对昂贵化石燃料进口的依赖”。",
+      "publishedAt": "2026-07-12T09:45:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "南海仲裁十周年 14国联合发声",
+      "url": "https://www.dw.com/zh/南海仲裁十周年-14国联合发声/a-77922548?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "南中国海仲裁案裁决满十周年之际，日本、美国、菲律宾等14国发表联合声明，重申中国在南中国海的广泛海洋主张“没有法律依据”，并强调2016年仲裁裁决具有法律约束力。北京则始终拒绝承认这一裁决。",
+      "publishedAt": "2026-07-12T08:29:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "特朗普最忠实的盟友之一、共和党重量级参议员格雷厄姆突发疾病去世",
+      "url": "https://www.dw.com/zh/特朗普最忠实的盟友之一、共和党重量级参议员格雷厄姆突发疾病去世/a-77921752?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "美国共和党重量级参议员林赛·格雷厄姆（Lindsey Graham）去世，享年71岁。他曾是特朗普的直言批评者，但在特朗普就任总统后，转而成为其在国会山最忠实的盟友之一。近日他在访问乌克兰时曾表示，中国可以在向俄罗斯施压促成和平谈判、协助结束乌克兰战争方面发挥决定性作用。",
+      "publishedAt": "2026-07-12T08:04:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "德国企业移师海外：利大于弊？",
+      "url": "https://www.dw.com/zh/德国企业移师海外：利大于弊？/a-77879592?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "德国企业迁往海外的趋势正在减缓。但由于本土的高成本压力，工业界仍在海外进行大力投资。只是，对本土的积极效应正在消失。",
+      "publishedAt": "2026-07-12T07:20:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "德国毒品问题报告：四分之一吸毒致死者不到30岁",
+      "url": "https://www.dw.com/zh/德国毒品问题报告：四分之一吸毒致死者不到30岁/a-77893226?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "德国政府毒品问题专员施特里克介绍了2025年的报告。2150人死于使用毒品，其中许多人还不到30岁。",
+      "publishedAt": "2026-07-12T07:19:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "德国人为何请病假天数多？",
+      "url": "https://www.dw.com/zh/德国人为何请病假天数多？/a-77853272?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "在德国，请病假的天数达到新高，雇员每年平均请病假近20天。总理默茨认为必须采取对策。那么，与其它国家相比，德国的缺勤情况算高吗？",
+      "publishedAt": "2026-07-12T07:03:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
+      "title": "中国在太平洋的核威慑能力有多大？",
+      "url": "https://www.dw.com/zh/中国在太平洋的核威慑能力有多大？/a-77877394?maca=chi-rss-chi-all-1127-rdf",
+      "excerpt": "中国核潜艇向太平洋海域试射洲际导弹之后，周边国家的不满情绪升高。中国海军正在展示其军事实力，并在太平洋地区向美国发起挑战。",
+      "publishedAt": "2026-07-12T07:01:00.000Z",
+      "category": "politics",
+      "source": "DW 中文"
+    },
+    {
+      "sourceId": "dw-chinese",
       "title": "“中国冲击2.0”来袭 德国工业界能招架得住吗？",
       "url": "https://www.dw.com/zh/中国冲击2-0-来袭-德国工业界能招架得住吗？/a-77917031?maca=chi-rss-chi-all-1127-rdf",
       "excerpt": "数十年来，德国从中国崛起过程中获益，如今，中国正日益成为德国在汽车、机械制造、化工等多个行业的竞争对手，而下一轮竞争已经拉开帷幕。",
@@ -4281,24 +4218,6 @@
     },
     {
       "sourceId": "dw-chinese",
-      "title": "颱風巴威直撲浙江 中國疏散逾60萬人",
-      "url": "https://www.dw.com/zh/颱風巴威直撲浙江-中國疏散逾60萬人/a-77915464?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "中國在週六撤離了超過60萬人，以因應颱風巴威（Bavi）即將侵襲中國東部重要城市溫州。此前，巴威已為日本南部先島群島及台灣北部、東部帶來豪雨與強烈陣風。",
-      "publishedAt": "2026-07-11T08:43:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
-      "title": "人口不断增长 地球容量几何？",
-      "url": "https://www.dw.com/zh/人口不断增长-地球容量几何？/a-77909550?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "1987年7月11日，地球人口首次突破50亿大关。此后，7月11日就被定为世界人口日。现如今，全球人口已经超过80亿，那么，今后全球人口的发展走势又如何呢？",
-      "publishedAt": "2026-07-11T06:26:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
       "title": "德国议会批准医保节约方案",
       "url": "https://www.dw.com/zh/德国议会批准医保节约方案/a-77909972?maca=chi-rss-chi-all-1127-rdf",
       "excerpt": "经过长时间的争执，德国执政联盟旨在节约上百亿欧元医保开支的方案在联邦议院及参议院获得通过。卫生部长称，只有这样才能避免2027年医保缴费率上调一个百分点。",
@@ -4326,15 +4245,6 @@
     },
     {
       "sourceId": "dw-chinese",
-      "title": "印度籍工人工伤惨死 意大利雇主被判16年",
-      "url": "https://www.dw.com/zh/印度籍工人工伤惨死-意大利雇主被判16年/a-77907984?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "一名外籍劳工之死震惊了意大利：在遭遇严重的工伤事故后，雇主将身受重伤的他弃之不顾。如今，这名农场主已被判处16年监禁。",
-      "publishedAt": "2026-07-10T13:37:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
       "title": "长平观察：习近平还能攻打台湾吗？",
       "url": "https://www.dw.com/zh/长平观察：习近平还能攻打台湾吗？/a-77906406?maca=chi-rss-chi-all-1127-rdf",
       "excerpt": "美国在伊朗战争中的无能让台湾没有了指望？时事评论作家长平认为，习近平自己消灭了中国军队的大批将领，以及乌克兰可能击败俄罗斯的侵略战争，都成为对台湾安全的利好消息。",
@@ -4357,15 +4267,6 @@
       "url": "https://www.dw.com/zh/大众总裁计划削减半数车型-媒体报其节约方案被拒/a-77904994?maca=chi-rss-chi-all-1127-rdf",
       "excerpt": "大众总裁布鲁默计划实施“该企业历史上最全面的重新定向”，但在周四的监事会会议上，他的一揽子方案显然未获通过。",
       "publishedAt": "2026-07-10T11:23:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
-      "title": "保密多日后官宣：美国将向德国出售战斧巡航导弹",
-      "url": "https://www.dw.com/zh/保密多日后官宣：美国将向德国出售战斧巡航导弹/a-77902884?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "美国总统特朗普曾拒绝在德国部署战斧式巡航导弹。但柏林在幕后与华盛顿继续谈判，并在刚刚结束的北约峰会期间，与美方就购买战斧导弹达成一致。",
-      "publishedAt": "2026-07-10T10:40:00.000Z",
       "category": "politics",
       "source": "DW 中文"
     },
@@ -4411,15 +4312,6 @@
       "url": "https://www.dw.com/zh/因污染环境-中国电池厂在匈牙利被勒令停产/a-77887151?maca=chi-rss-chi-all-1127-rdf",
       "excerpt": "锂电池巨头宁德时代在匈牙利的一家中国供应商，因污染丑闻被当地政府吊销了生产许可。宁德时代本身也面临投资前景不确定的风险。匈牙利新政府上台后，收紧了对外资工业企业的环保监管。",
       "publishedAt": "2026-07-09T11:30:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
-      "title": "特朗普离开北约峰会时为何不坐新的空军一号？",
-      "url": "https://www.dw.com/zh/特朗普离开北约峰会时为何不坐新的空军一号？/a-77886829?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "几天前，美国总统特朗普首次乘坐由海湾国家卡塔尔赠送的新政府专机出国访问。但周三（7月8日）从土耳其的北约峰会前往英国时，他则出人意料地改乘了一架旧款“空军一号”。至于原因，尚不清楚。",
-      "publishedAt": "2026-07-09T11:04:00.000Z",
       "category": "politics",
       "source": "DW 中文"
     },
@@ -4496,28 +4388,91 @@
       "source": "DW 中文"
     },
     {
-      "sourceId": "dw-chinese",
-      "title": "需要外国劳工 日本仍收紧移民政策",
-      "url": "https://www.dw.com/zh/需要外国劳工-日本仍收紧移民政策/a-77774317?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "日本面临劳动力匮乏的难题，对外国劳工的需求增加。但与此同时，日本政府采取措施，收紧签证的相关规定。",
-      "publishedAt": "2026-07-05T07:25:00.000Z",
+      "sourceId": "aljazeera",
+      "title": "Photos: Qatari Father Emir Sheikh Hamad bin Khalifa Al Thani",
+      "url": "https://www.aljazeera.com/gallery/2026/7/12/photos-qatari-father-emir-sheikh-hamad-bin-khalifa-al-thani?traffic_source=rss",
+      "excerpt": "Sheikh Hamad, who ruled Qatar from 1995 to 2013 and stepped aside to make his son Sheikh Tamim emir, dies aged 74.",
+      "publishedAt": "2026-07-12T10:17:04.000Z",
       "category": "politics",
-      "source": "DW 中文"
-    },
-    {
-      "sourceId": "dw-chinese",
-      "title": "数字欧元：既抵御美国式动荡，又避免中国式监管",
-      "url": "https://www.dw.com/zh/数字欧元：既抵御美国式动荡，又避免中国式监管/a-77787405?maca=chi-rss-chi-all-1127-rdf",
-      "excerpt": "上周，欧洲议会经济和货币事务委员会批准了数字欧元监管规则草案。即将于2027年试点的数字欧元，如何抵御特朗普政府财经政策的动荡，同时避免中国社会信用体系对公民权利的侵害？",
-      "publishedAt": "2026-07-05T07:25:00.000Z",
-      "category": "politics",
-      "source": "DW 中文"
+      "source": "Al Jazeera"
     },
     {
       "sourceId": "aljazeera",
-      "title": "US Senator Lindsey Graham passes away",
+      "title": "The spectacle and symbolism of Khamenei’s funeral",
+      "url": "https://www.aljazeera.com/video/the-listening-post/2026/7/12/the-spectacle-and-symbolism-of-khameneis-funeral?traffic_source=rss",
+      "excerpt": "How coverage of the supreme leader's funeral exposed the limits of familiar narratives about Iran.",
+      "publishedAt": "2026-07-12T09:53:49.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Former Emir of Qatar Sheikh Hamad bin Khalifa Al Thani dies: Reactions",
+      "url": "https://www.aljazeera.com/news/2026/7/12/former-emir-of-qatar-sheikh-hamad-bin-khalifa-al-thani-dies-reactions?traffic_source=rss",
+      "excerpt": "After Sheikh Hamad's death, global leaders offer condolences, praise his legacy and Qatar’s growth.",
+      "publishedAt": "2026-07-12T09:40:23.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Iran attacks five Gulf nations, shuts Hormuz after US bombing: All to know",
+      "url": "https://www.aljazeera.com/news/2026/7/12/iran-attacks-five-gulf-nations-shuts-hormuz-after-us-bombing-all-to-know?traffic_source=rss",
+      "excerpt": "Tehran hits back at several GCC countries, following the most intense US bombing since an MoU was signed last month.",
+      "publishedAt": "2026-07-12T09:13:26.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Watch World Cup: England beats Norway to set up semifinal against Argentina",
+      "url": "https://www.aljazeera.com/video/2026/7/12/video-world-cup-2026-highlights?traffic_source=rss",
+      "excerpt": "Latest match highlights, reaction and previews from the FIFA World Cup 2026 in North America.",
+      "publishedAt": "2026-07-12T08:10:41.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "US CENTCOM completes third round of strikes on Iran",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/12/us-centcom-completes-third-round-of-strikes-on-iran?traffic_source=rss",
+      "excerpt": "US CENTCOM completes third round of strikes on Iran",
+      "publishedAt": "2026-07-12T07:58:48.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Missiles and drones fired at Gulf states after night of US strikes on Iran",
+      "url": "https://www.aljazeera.com/news/2026/7/12/missiles-and-drones-fired-at-gulf-states-after-night-of-us-strikes-on-iran?traffic_source=rss",
+      "excerpt": "Three people injured by falling shrapnel in Qatar as attacks also reported in UAE, Kuwait, Bahrain, Oman and Jordan.",
+      "publishedAt": "2026-07-12T07:53:41.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "France vs Spain World Cup semifinal: Prediction, Mbappe-Yamal, venue, stats",
+      "url": "https://www.aljazeera.com/sports/2026/7/12/france-spain-fifa-world-cup-semifinals-mbappe-yamal-prediction-stats-venue?traffic_source=rss",
+      "excerpt": "European football titans France and Spain meet in a blockbuster FIFA World Cup 2026 final four matchup in Dallas.",
+      "publishedAt": "2026-07-12T07:19:25.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "IRGC vows ‘crushing response’ to any further US attacks",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/12/irgc-vows-crushing-response-to-any-further-us-attacks?traffic_source=rss",
+      "excerpt": "IRGC vows ‘crushing response’ to any further US attacks",
+      "publishedAt": "2026-07-12T07:08:20.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
+      "title": "Lindsey Graham, one of Israel’s strongest US Senate allies, dies at 71",
       "url": "https://www.aljazeera.com/news/2026/7/12/us-senator-lindsey-graham-passes-away?traffic_source=rss",
-      "excerpt": "This is a breaking news story.",
+      "excerpt": "The US Republican senator died of a sudden illness, his office said. He was 71.",
       "publishedAt": "2026-07-12T06:27:06.000Z",
       "category": "politics",
       "source": "Al Jazeera"
@@ -4544,7 +4499,7 @@
       "sourceId": "aljazeera",
       "title": "Former Emir of Qatar Sheikh Hamad bin Khalifa Al Thani dies aged 74",
       "url": "https://www.aljazeera.com/news/2026/7/12/former-emir-of-qatar-sheikh-hamad-bin-khalifa-al-thani-dies-at-74?traffic_source=rss",
-      "excerpt": "Sheikh Hamad, who ruled Qatar from 1995 to 2013, was a key architect of the energy-rich country's development.",
+      "excerpt": "Sheikh Hamad, who ruled Qatar from 1995 to 2013, was a key architect of the energy-rich Gulf country's development.",
       "publishedAt": "2026-07-12T05:15:01.000Z",
       "category": "politics",
       "source": "Al Jazeera"
@@ -4605,7 +4560,7 @@
     },
     {
       "sourceId": "aljazeera",
-      "title": "Argentina beat Switzerland to set up World Cup 2026 semifinal with England",
+      "title": "Argentina beats Switzerland to set up World Cup 2026 semifinal with England",
       "url": "https://www.aljazeera.com/sports/2026/7/12/argentina-defeat-switzerland-to-set-up-england-semifinal-at-world-cup-2026?traffic_source=rss",
       "excerpt": "Argentina need extra time to beat Switzerland 3-1 in the quarterfinals to set up a showdown with England on Wednesday.",
       "publishedAt": "2026-07-12T03:50:27.000Z",
@@ -4650,91 +4605,10 @@
     },
     {
       "sourceId": "aljazeera",
-      "title": "Iran war live: Tehran attacks Jordan, Gulf states after US bombardment",
+      "title": "Iran war live: Middle East on high alert as IRGC, US military trade blows",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/12/iran-war-live-irgc-declares-strait-of-hormuz-closed-over-us-interference?traffic_source=rss",
-      "excerpt": "Iran targets Jordan and Gulf states after US bombs Iranian cities including Bandar Abbas, Sirik and Chabahar",
+      "excerpt": "Fears grow of further US-Iran escalation after largest tit-for-tat attacks yet during the ceasefire.",
       "publishedAt": "2026-07-12T00:00:00.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Indian tourists killed after speedboat capsizes in Vietnam",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/11/indian-tourists-killed-after-speedboat-capsizes-in-vietnam?traffic_source=rss",
-      "excerpt": "Fifteen Indian tourists have died after their speedboat capsized off Vietnam’s Phu Quoc Island.",
-      "publishedAt": "2026-07-11T23:35:23.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Whistleblower claims Kennedy Center ‘rushed’ renovations to please Trump",
-      "url": "https://www.aljazeera.com/news/2026/7/11/whistleblower-claims-kennedy-center-rushed-renovations-to-please-trump?traffic_source=rss",
-      "excerpt": "Democratic Senator Sheldon Whitehouse details rusting columns, uneven paint and unnecessary demolition under Trump.",
-      "publishedAt": "2026-07-11T23:31:23.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "FIFA to sell pieces of World Cup final stadium pitch, could earn millions",
-      "url": "https://www.aljazeera.com/sports/2026/7/11/fifa-to-sell-pieces-of-world-cup-final-stadium-pitch-could-earn-millions?traffic_source=rss",
-      "excerpt": "Pieces from the turf used at the stadium will go on sale as memorabilia and will be priced from $450 to $1,200.",
-      "publishedAt": "2026-07-11T22:58:10.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "US judge dismisses January 6 case against Proud Boys after Trump order",
-      "url": "https://www.aljazeera.com/news/2026/7/11/us-judge-dismisses-january-6-case-against-proud-boys-after-trump-order?traffic_source=rss",
-      "excerpt": "The case is the latest instance of the Trump administration seeking to unravel prosecutions against January 6 rioters.",
-      "publishedAt": "2026-07-11T21:53:40.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Argentina 3-1 Switzerland (aet): FIFA World Cup 2026 – as it happened",
-      "url": "https://www.aljazeera.com/sports/liveblog/2026/7/11/argentina-vs-switzerland-live-fifa-world-cup-2026?traffic_source=rss",
-      "excerpt": "All the updates from our live text commentary stream coverage as Messi's Argentina beat Switzerland to reach semifinals.",
-      "publishedAt": "2026-07-11T21:31:40.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "UK police investigate murder of politician Ann Widdecombe",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/11/uk-police-investigate-murder-of-politician-ann-widdecombe?traffic_source=rss",
-      "excerpt": "Politician Ann Widdecombe was found dead with serious injuries, with police confirming a murder investigation underway",
-      "publishedAt": "2026-07-11T20:29:40.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "What’s behind Pakistan’s mass deportation of Afghans?",
-      "url": "https://www.aljazeera.com/video/inside-story/2026/7/11/whats-behind-pakistans-mass-deportation-of-afghans?traffic_source=rss",
-      "excerpt": "Islamabad cites national security concerns, returns thousands of undocumented migrants.",
-      "publishedAt": "2026-07-11T20:11:55.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Thousands gather in Srebrenica to mark 31 years since genocide",
-      "url": "https://www.aljazeera.com/news/2026/7/11/thousands-gather-in-srebrenica-to-mark-31-years-since-genocide?traffic_source=rss",
-      "excerpt": "Ten newly identified victims were buried as the more than 8,000 Bosnian Muslim men and boys killed were remembered.",
-      "publishedAt": "2026-07-11T19:25:59.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "‘All we see is decay’: Covering the human toll of Venezuela’s earthquakes",
-      "url": "https://www.aljazeera.com/news/2026/7/11/all-we-see-is-decay-covering-the-human-toll-of-venezuelas-earthquakes?traffic_source=rss",
-      "excerpt": "As the death toll in Venezuela surges past 4,000, families continue to hold out hope that loved ones might be found.",
-      "publishedAt": "2026-07-11T19:15:10.000Z",
       "category": "politics",
       "source": "Al Jazeera"
     },
