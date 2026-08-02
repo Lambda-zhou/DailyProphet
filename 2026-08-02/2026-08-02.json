@@ -235,21 +235,26 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 63407.66,
-        "pct1Day": 0.9455158196799509,
-        "pct5Day": -0.49782494013880163,
-        "pct52WeekHigh": -49.755443962019385,
-        "pct52WeekLow": 9.801061395171546,
-        "sma20": 64408.313671875,
-        "sma50": 63382.8821875,
-        "sma200": 71295.63765625,
-        "rsi14": 46.8940249642289,
-        "macd": -6.90151842773048,
-        "macdSignal": 190.6331585563094,
-        "macdHistogram": -197.5346769840399,
-        "trend": "neutral",
+        "currentPrice": 63129.96,
+        "pct1Day": 0.5841623509949629,
+        "pct5Day": -1.160775726651268,
+        "pct52WeekHigh": -49.97549487088036,
+        "pct52WeekLow": 9.320176991781805,
+        "sma20": 64420.638671875,
+        "sma50": 63344.168125,
+        "sma200": 71123.41912109376,
+        "rsi14": 45.76283067371478,
+        "macd": -120.50484213514574,
+        "macdSignal": 120.18150571146548,
+        "macdHistogram": -240.68634784661123,
+        "trend": "bearish",
         "rsiState": "normal",
-        "signals": []
+        "signals": [
+          {
+            "type": "below-sma50-sma200",
+            "label": "空头排列"
+          }
+        ]
       },
       {
         "symbol": "ETH-USD",
@@ -257,25 +262,25 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1875,
-        "pct1Day": 0.7877057896631446,
-        "pct5Day": -0.8258443717310784,
-        "pct52WeekHigh": -62.14975655732757,
-        "pct52WeekLow": 24.460199519988546,
-        "sma20": 1885.9174926757812,
-        "sma50": 1777.2876196289062,
-        "sma200": 2102.7318634033204,
-        "rsi14": 52.21486110977652,
-        "macd": 29.333912439752794,
-        "macdSignal": 36.483165633887275,
-        "macdHistogram": -7.149253194134481,
+        "currentPrice": 1867.7,
+        "pct1Day": 1.3172421565909875,
+        "pct5Day": -2.72134834346777,
+        "pct52WeekHigh": -62.297120171797715,
+        "pct52WeekLow": 23.97563447652406,
+        "sma20": 1889.04833984375,
+        "sma50": 1780.4056811523437,
+        "sma200": 2095.1388385009764,
+        "rsi14": 51.51454525291487,
+        "macd": 23.631066973863426,
+        "macdSignal": 33.50964449518734,
+        "macdHistogram": -9.878577521323912,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": [
           {
             "type": "macd-bear-cross",
             "label": "MACD 死叉",
-            "daysAgo": 3
+            "daysAgo": 4
           }
         ]
       },
@@ -285,18 +290,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 73.47,
-        "pct1Day": 0.9346373202186955,
-        "pct5Day": -0.9061626356257322,
-        "pct52WeekHigh": -70.9845468127431,
-        "pct52WeekLow": 21.609475839489388,
-        "sma20": 75.43653678894043,
-        "sma50": 74.91421432495117,
-        "sma200": 86.08753269195557,
-        "rsi14": 44.23380469860919,
-        "macd": -0.6984619710768243,
-        "macdSignal": -0.3171147357446484,
-        "macdHistogram": -0.3813472353321759,
+        "currentPrice": 73.25,
+        "pct1Day": 1.9254098105695356,
+        "pct5Day": -0.6094063991605703,
+        "pct52WeekHigh": -71.07143125130574,
+        "pct52WeekLow": 21.24532605475157,
+        "sma20": 75.27578125,
+        "sma50": 74.9696841430664,
+        "sma200": 85.71200004577636,
+        "rsi14": 44.46502428278141,
+        "macd": -0.8502630855244604,
+        "macdSignal": -0.44421355912386373,
+        "macdHistogram": -0.40604952640059666,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -588,13 +593,13 @@
       "timestamp": "2026-08-02T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2259556736428.831,
-      "total24hVolumeUsd": 37428762741.63113,
-      "marketCapChangePct24h": 0.4948261522368938,
-      "btcDominance": 56.30965810105324,
-      "ethDominance": 10.019488283114402,
-      "activeCryptocurrencies": 18102
+      "totalMarketCapUsd": 2251309782088.3447,
+      "total24hVolumeUsd": 38551538072.396736,
+      "marketCapChangePct24h": 0.2182142133584506,
+      "btcDominance": 56.25133496080936,
+      "ethDominance": 10.006388823866102,
+      "activeCryptocurrencies": 18106
     },
-    "generated_at": "2026-08-02T06:35:11.667Z"
+    "generated_at": "2026-08-02T11:17:57.760Z"
   }
 }
