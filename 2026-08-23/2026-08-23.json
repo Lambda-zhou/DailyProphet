@@ -244,18 +244,45 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 76848.06,
-        "pct1Day": -1.8984157023942814,
-        "pct5Day": 19.13272798585844,
-        "pct52WeekHigh": -39.10520184658926,
-        "pct52WeekLow": 33.07538165199325,
-        "sma20": 66038.051171875,
-        "sma50": 64856.63328125,
-        "sma200": 68979.66544921875,
-        "rsi14": 79.19349623369047,
-        "macd": 2496.251476251433,
-        "macdSignal": 936.8054820518105,
-        "macdHistogram": 1559.4459941996224,
+        "currentPrice": 76812.56,
+        "pct1Day": -0.3513778752461472,
+        "pct5Day": 18.756517803619722,
+        "pct52WeekHigh": -39.133332229248836,
+        "pct52WeekLow": 33.013907412452966,
+        "sma20": 66717.401953125,
+        "sma50": 65135.82546875,
+        "sma200": 68999.80650390625,
+        "rsi14": 78.9566526791526,
+        "macd": 2929.0259431244194,
+        "macdSignal": 1338.2534916452505,
+        "macdHistogram": 1590.772451479169,
+        "trend": "neutral",
+        "rsiState": "overbought",
+        "signals": [
+          {
+            "type": "rsi-overbought",
+            "label": "RSI 超买"
+          }
+        ]
+      },
+      {
+        "symbol": "ETH-USD",
+        "displayName": "Ethereum",
+        "group": "crypto",
+        "currency": "USD",
+        "exchangeName": "CCC",
+        "currentPrice": 2416.52,
+        "pct1Day": -0.31891169682004616,
+        "pct5Day": 26.092927116722507,
+        "pct52WeekHigh": -51.21820251515372,
+        "pct52WeekLow": 60.40563271682279,
+        "sma20": 2016.3650939941406,
+        "sma50": 1919.6136450195313,
+        "sma200": 2006.7626116943359,
+        "rsi14": 77.33192197398938,
+        "macd": 134.57284856927208,
+        "macdSignal": 73.20874635132296,
+        "macdHistogram": 61.364102217949124,
         "trend": "neutral",
         "rsiState": "overbought",
         "signals": [
@@ -271,55 +298,23 @@
         ]
       },
       {
-        "symbol": "ETH-USD",
-        "displayName": "Ethereum",
-        "group": "crypto",
-        "currency": "USD",
-        "exchangeName": "CCC",
-        "currentPrice": 2405.43,
-        "pct1Day": -4.367373110111887,
-        "pct5Day": 25.793708681141613,
-        "pct52WeekHigh": -51.44207408836932,
-        "pct52WeekLow": 59.669492123395216,
-        "sma20": 1987.5108520507813,
-        "sma50": 1906.4874780273437,
-        "sma200": 2005.3034259033202,
-        "rsi14": 76.33057665056295,
-        "macd": 119.72933934945445,
-        "macdSignal": 57.567438122334195,
-        "macdHistogram": 62.161901227120254,
-        "trend": "neutral",
-        "rsiState": "overbought",
-        "signals": [
-          {
-            "type": "macd-bull-cross",
-            "label": "MACD 金叉",
-            "daysAgo": 3
-          },
-          {
-            "type": "rsi-overbought",
-            "label": "RSI 超买"
-          }
-        ]
-      },
-      {
         "symbol": "SOL-USD",
         "displayName": "Solana",
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 93.01,
-        "pct1Day": -0.6872241528276984,
-        "pct5Day": 22.471710215879007,
-        "pct52WeekHigh": -63.26762895131668,
-        "pct52WeekLow": 53.95254666412425,
-        "sma20": 78.05941963195801,
-        "sma50": 77.09995788574219,
-        "sma200": 81.12682052612304,
-        "rsi14": 80.84398411940234,
-        "macd": 3.5993272800872234,
-        "macdSignal": 1.5157759057244085,
-        "macdHistogram": 2.083551374362815,
+        "currentPrice": 93.86,
+        "pct1Day": -0.055933954993228084,
+        "pct5Day": 21.846725552297926,
+        "pct52WeekHigh": -62.93193907505196,
+        "pct52WeekLow": 55.35948854848619,
+        "sma20": 79.12386093139648,
+        "sma50": 77.36221572875976,
+        "sma200": 81.14048664093018,
+        "rsi14": 83.0307354542646,
+        "macd": 4.268920301490851,
+        "macdSignal": 2.077924215967443,
+        "macdHistogram": 2.1909960855234085,
         "trend": "neutral",
         "rsiState": "overbought",
         "signals": [
@@ -614,13 +609,13 @@
       "timestamp": "2026-08-23T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2586744658033.092,
-      "total24hVolumeUsd": 115084753503.64136,
-      "marketCapChangePct24h": -5.820397148510052,
-      "btcDominance": 59.39612038467337,
-      "ethDominance": 11.174655351278174,
-      "activeCryptocurrencies": 18619
+      "totalMarketCapUsd": 2591942879974.0757,
+      "total24hVolumeUsd": 85152957278.49419,
+      "marketCapChangePct24h": -3.5916285158248447,
+      "btcDominance": 59.1912635804292,
+      "ethDominance": 11.209211249900422,
+      "activeCryptocurrencies": 18630
     },
-    "generated_at": "2026-08-23T04:39:26.177Z"
+    "generated_at": "2026-08-23T10:26:14.683Z"
   }
 }
