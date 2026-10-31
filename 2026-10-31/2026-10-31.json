@@ -232,18 +232,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 77034.59,
-        "pct1Day": -0.9521290049616256,
-        "pct5Day": -3.73565120545368,
-        "pct52WeekHigh": -30.703918265180658,
-        "pct52WeekLow": 33.39838981823122,
-        "sma20": 81301.905859375,
-        "sma50": 81887.86109375,
-        "sma200": 73114.592421875,
-        "rsi14": 33.92467497232707,
-        "macd": -931.5681685473683,
-        "macdSignal": -426.42942074429044,
-        "macdHistogram": -505.1387478030778,
+        "currentPrice": 77433.58,
+        "pct1Day": 0.30488927093214313,
+        "pct5Day": -3.216077724783053,
+        "pct52WeekHigh": -30.345008798000055,
+        "pct52WeekLow": 34.08930832060239,
+        "sma20": 80997.7921875,
+        "sma50": 81896.3290625,
+        "sma200": 73131.6703515625,
+        "rsi14": 35.52770821091434,
+        "macd": -1074.1814751740167,
+        "macdSignal": -553.8914982969031,
+        "macdHistogram": -520.2899768771135,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -254,26 +254,21 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 2235.55,
-        "pct1Day": -0.6200623077302855,
-        "pct5Day": -3.926656674778729,
-        "pct52WeekHigh": -42.89601291279889,
-        "pct52WeekLow": 48.393066153018886,
-        "sma20": 2392.4406494140626,
-        "sma50": 2525.6665380859376,
-        "sma200": 2158.4388665771485,
-        "rsi14": 29.945206760117557,
-        "macd": -69.00688002115658,
-        "macdSignal": -56.44417070389933,
-        "macdHistogram": -12.562709317257244,
+        "currentPrice": 2248.42,
+        "pct1Day": 0.3286647793162932,
+        "pct5Day": -3.0970922167301884,
+        "pct52WeekHigh": -42.567266826237514,
+        "pct52WeekLow": 49.247360962524084,
+        "sma20": 2378.401904296875,
+        "sma50": 2520.4503466796873,
+        "sma200": 2158.0919451904297,
+        "rsi14": 31.418322451052873,
+        "macd": -71.24053377757036,
+        "macdSignal": -59.33318779869052,
+        "macdHistogram": -11.907345978879846,
         "trend": "neutral",
-        "rsiState": "oversold",
-        "signals": [
-          {
-            "type": "rsi-oversold",
-            "label": "RSI 超卖"
-          }
-        ]
+        "rsiState": "normal",
+        "signals": []
       },
       {
         "symbol": "SOL-USD",
@@ -281,18 +276,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 95.84,
-        "pct1Day": 0.36218665329989547,
-        "pct5Day": -5.318153615353212,
-        "pct52WeekHigh": -49.518979183584314,
-        "pct52WeekLow": 58.6368355261764,
-        "sma20": 103.4088809967041,
-        "sma50": 109.22334732055664,
-        "sma200": 88.73372772216797,
-        "rsi14": 30.32012542551996,
-        "macd": -3.2844753304145797,
-        "macdSignal": -2.550556938914339,
-        "macdHistogram": -0.7339183915002407,
+        "currentPrice": 95.91,
+        "pct1Day": -0.320891307476423,
+        "pct5Day": -4.808554808596611,
+        "pct52WeekHigh": -49.18438850741712,
+        "pct52WeekLow": 58.75270132841797,
+        "sma20": 102.66125602722168,
+        "sma50": 109.10119766235351,
+        "sma200": 88.7962984085083,
+        "rsi14": 30.97663373451485,
+        "macd": -3.4437513212369453,
+        "macdSignal": -2.7243614832251914,
+        "macdHistogram": -0.7193898380117538,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -553,7 +548,7 @@
         "pct1Day": -1.2026427235593542,
         "pct5Day": -1.182837150548042,
         "pct52WeekHigh": -8.109619686800889,
-        "pct52WeekLow": 24.59555106167847,
+        "pct52WeekLow": 0,
         "sma20": 5.122399997711182,
         "sma50": 5.012879981994629,
         "sma200": 4.547054982185363,
@@ -563,7 +558,12 @@
         "macdHistogram": -0.031939440395309035,
         "trend": "neutral",
         "rsiState": "normal",
-        "signals": []
+        "signals": [
+          {
+            "type": "near-52w-low",
+            "label": "接近 52 周低"
+          }
+        ]
       },
       {
         "symbol": "DX-Y.NYB",
@@ -604,13 +604,13 @@
       "timestamp": "2026-10-31T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2617377562316.8687,
-      "total24hVolumeUsd": 87483525734.97057,
-      "marketCapChangePct24h": -3.414567047610273,
-      "btcDominance": 59.21873206542566,
-      "ethDominance": 10.410538593277135,
+      "totalMarketCapUsd": 2626873351119.37,
+      "total24hVolumeUsd": 118597288722.57426,
+      "marketCapChangePct24h": -2.2752686440400582,
+      "btcDominance": 59.19265130803863,
+      "ethDominance": 10.441180009283437,
       "activeCryptocurrencies": 22643
     },
-    "generated_at": "2026-10-31T04:37:20.825Z"
+    "generated_at": "2026-10-31T15:38:14.628Z"
   }
 }
